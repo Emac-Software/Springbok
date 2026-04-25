@@ -1,79 +1,108 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const NAV_LINKS = [
-  { label: 'Home',       to: '/' },
-  { label: 'Services',   to: '/services' },
-  { label: 'About Us',   to: '/about' },
-  { label: 'Case Studies', to: '/case-studies' },
-  { label: 'Industries', to: '/industries' },
-  { label: 'Contact',    to: '/contact' },
-]
+const LINK_COLS = [
+  {
+    title: "Navigation",
+    links: [
+      { label: "Home", to: "/" },
+      { label: "Services", to: "/services" },
+      { label: "About", to: "/about" },
+      { label: "Contact", to: "/contact" },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      { label: "Social Media", to: "/services" },
+      { label: "Email Marketing", to: "/services" },
+      { label: "Member Comms", to: "/services" },
+      { label: "Content Strategy", to: "/services" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", to: "/about" },
+      { label: "Case Studies", to: "/case-studies" },
+      { label: "Industries", to: "/industries" },
+      { label: "Contact", to: "/contact" },
+    ],
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-cream/10 bg-charcoal">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
-
-        {/* Col 1 — Brand */}
-        <div className="flex flex-col gap-4">
-          <Link to="/" className="flex items-center gap-3">
-            <img src="/media/head-logo.svg" alt="Springbok Media" className="h-7 w-auto opacity-80" />
-            <span className="font-serif italic text-lg text-cream/80">Springbok Media</span>
-          </Link>
-          <p className="font-sans text-xs text-cream/40 leading-relaxed max-w-xs">
-            Niche digital marketing for private golf, country, and sports clubs in Ontario. Hands-on, tailored, and built for your culture.
-          </p>
-        </div>
-
-        {/* Col 2 — Navigation */}
-        <div>
-          <p className="font-sans text-xs tracking-[0.2em] uppercase text-cream/30 mb-5">Navigation</p>
-          <ul className="flex flex-col gap-3">
-            {NAV_LINKS.map((link) => (
-              <li key={link.to}>
-                <Link
-                  to={link.to}
-                  className="font-sans text-sm text-cream/55 hover:text-camel transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Col 3 — Contact info */}
-        <div>
-          <p className="font-sans text-xs tracking-[0.2em] uppercase text-cream/30 mb-5">Contact</p>
-          <div className="flex flex-col gap-3">
-            <a
-              href="mailto:hello@springbokmedia.com"
-              className="font-sans text-sm text-cream/55 hover:text-camel transition-colors duration-200"
+    <footer className="bg-charcoal text-cream">
+      <div className="max-w-[1280px] mx-auto px-10 pt-20 pb-10">
+        {/* Main grid */}
+        <div
+          className="grid gap-16 pb-16 border-b border-white/10"
+          style={{ gridTemplateColumns: "2fr 1fr 1fr 1fr" }}
+        >
+          {/* Col 1 — Brand */}
+          <div>
+            <Link to="/" className="flex items-center gap-2.5 mb-5">
+              <img
+                src="/logo/head-logo.svg"
+                alt="Springbok Media"
+                style={{ height: 36, width: "auto" }}
+              />
+              <span
+                className="font-script text-xl text-cream"
+                style={{ fontWeight: 600 }}
+              >
+                Springbok Media
+              </span>
+            </Link>
+            <p
+              className="font-sans text-sm leading-relaxed max-w-[280px]"
+              style={{ color: "rgba(255,255,255,0.5)" }}
             >
-              hello@springbokmedia.com
-            </a>
-            <p className="font-sans text-sm text-cream/40">Ontario, Canada</p>
-            <a
-              href="#calendly"
-              className="font-sans text-xs tracking-[0.15em] uppercase text-camel/70 hover:text-camel transition-colors duration-200 mt-2"
-            >
-              Book a Discovery Call →
-            </a>
+              Bespoke digital marketing for Ontario's finest private clubs. We
+              speak your language because we understand your world.
+            </p>
           </div>
-        </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-cream/5 px-6 py-5">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <p className="font-sans text-xs text-cream/25">
+          {/* Cols 2–4 — Link columns */}
+          {LINK_COLS.map((col) => (
+            <div key={col.title}>
+              <p className="font-sans text-[11px] tracking-[0.15em] uppercase text-camel mb-5 font-medium">
+                {col.title}
+              </p>
+              <ul className="flex flex-col gap-3">
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      to={link.to}
+                      className="font-sans text-sm transition-colors duration-200 hover:text-cream"
+                      style={{ color: "rgba(255,255,255,0.5)" }}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom bar */}
+        <div className="pt-8 flex justify-between items-center">
+          <p
+            className="font-sans text-xs tracking-[0.05em]"
+            style={{ color: "rgba(255,255,255,0.3)" }}
+          >
             © {new Date().getFullYear()} Springbok Media. All rights reserved.
+            Ontario, Canada.
           </p>
-          <p className="font-sans text-xs text-cream/20">
-            springbokmedia.com
+          <p
+            className="font-sans text-xs tracking-[0.05em]"
+            style={{ color: "rgba(255,255,255,0.3)" }}
+          >
+            Specialists in Private Club Marketing
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
