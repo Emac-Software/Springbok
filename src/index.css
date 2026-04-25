@@ -3,11 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --color-charcoal: #1c1c1a;
-  --color-cream: #f5f4ef;
-  --color-camel: #c4a46b;
-  --color-forest: #3d6b4f;
-  --color-periwinkle: #8899bb;
+  --color-charcoal:   #1c1c1a;
+  --color-cream:      #f5f4ef;
+  --color-camel:      #c5a87a;
+  --color-forest:     #3a5c40;
+  --color-periwinkle: #7b8fbe;
+  --color-offwhite:   #faf9f6;
+  --color-warmwhite:  #f5f2ec;
+  --color-textmuted:  #6b6760;
+  --color-greenlight: #e8efe9;
+  --color-camellight: #e8d9c0;
+  /* Derived shadow helpers — update alongside palette */
+  --shadow-forest:    color-mix(in srgb, var(--color-forest) 35%, transparent);
+  --shadow-camel:     color-mix(in srgb, var(--color-camel) 35%, transparent);
+  --shadow-charcoal:  color-mix(in srgb, var(--color-charcoal) 18%, transparent);
 }
 
 @layer base {
@@ -20,17 +29,17 @@
     color: var(--color-cream);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
-  h1,
-  h2,
-  h3,
-  h4 {
+  h1, h2, h3, h4 {
     font-family: "Cormorant Garamond", Georgia, serif;
   }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--color-camel); border-radius: 2px; }
 }
 
 @layer utilities {
-  /* Subtle film grain texture using SVG noise filter */
   .grain-overlay::after {
     content: "";
     position: absolute;
@@ -41,8 +50,6 @@
     mix-blend-mode: overlay;
     z-index: 1;
   }
-
-  /* Ensure grain overlay children sit above the pseudo-element */
   .grain-overlay > * {
     position: relative;
     z-index: 2;

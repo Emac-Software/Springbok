@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 
 const variants = {
-  primary: 'bg-forest text-cream border border-transparent hover:bg-forest/85',
-  outline: 'bg-transparent text-cream border border-camel hover:bg-camel hover:text-charcoal',
-  ghost:   'bg-transparent text-cream/70 border border-transparent hover:text-cream',
+  primary:  'bg-forest text-cream border border-transparent hover:bg-forest/85',
+  camel:    'bg-camel text-white border border-transparent hover:bg-camel/85',
+  outline:  'bg-transparent text-cream border border-camel hover:bg-camel hover:text-charcoal',
+  ghost:    'bg-transparent text-cream/70 border border-transparent hover:text-cream',
+  'outline-dark': 'bg-transparent text-camel border border-camel hover:bg-camel hover:text-charcoal',
 }
 
 export default function Button({
