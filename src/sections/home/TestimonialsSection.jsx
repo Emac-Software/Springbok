@@ -84,7 +84,11 @@ function TestimonialCarousel() {
             </blockquote>
             <div
               className="mx-auto mb-5"
-              style={{ width: 40, height: 2, background: "var(--color-camel)" }}
+              style={{
+                width: 40,
+                height: 2,
+                background: "var(--color-camel)",
+              }}
             />
             <p className="font-sans text-[12px] tracking-[0.14em] uppercase text-textmuted font-medium">
               {TESTIMONIALS[current].attribution}
