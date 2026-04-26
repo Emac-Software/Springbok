@@ -52,10 +52,10 @@ export default function Header() {
     <header
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: `color-mix(in srgb, var(--color-charcoal) ${Math.round(progress * 28)}%, transparent)`,
+        background: `color-mix(in srgb, var(--color-forest) ${Math.round(progress * 28)}%, transparent)`,
         backdropFilter: `blur(${(progress * 12).toFixed(1)}px)`,
         WebkitBackdropFilter: `blur(${(progress * 12).toFixed(1)}px)`,
-        boxShadow: progress > 0.95 ? "0 1px 0 rgba(255,255,255,0.07)" : "none",
+        boxShadow: progress > 0.95 ? "0 1px 0 rgba(55,55,55,0.07)" : "none",
       }}
     >
       <div className="max-w-[1360px] mx-auto px-9 h-[76px] flex items-center justify-between">
