@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import ScrollReveal from "@/ui/ScrollReveal";
+import AnimatedNumber from "@/ui/AnimatedNumber";
 
 const STATS = [
   { target: 40, suffix: "+", label: "Private clubs served" },
@@ -7,43 +8,6 @@ const STATS = [
   { target: 8, suffix: " yrs", label: "Niche specialization" },
   { target: 100, suffix: "%", label: "Ontario focused" },
 ];
-
-// Fast start, slow finish — log curve: log(1 + 9t) / log(10)
-function logEase(t) {
-  return Math.log1p(t * 9) / Math.log(10);
-}
-
-function AnimatedNumber({ target, suffix, duration, delay, triggered }) {
-  const [display, setDisplay] = useState(0);
-  const rafRef = useRef(null);
-
-  useEffect(() => {
-    if (!triggered) return;
-    let startTime = null;
-
-    const tick = (timestamp) => {
-      if (startTime === null) startTime = timestamp + delay;
-      const elapsed = timestamp - startTime;
-      if (elapsed < 0) {
-        rafRef.current = requestAnimationFrame(tick);
-        return;
-      }
-      const t = Math.min(elapsed / duration, 1);
-      setDisplay(Math.round(logEase(t) * target));
-      if (t < 1) rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
-  }, [triggered, target, duration, delay]);
-
-  return (
-    <>
-      {display}
-      {suffix}
-    </>
-  );
-}
 
 export default function StatsBar() {
   const [triggered, setTriggered] = useState(false);

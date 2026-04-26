@@ -1,9 +1,28 @@
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/ui/ScrollReveal";
+import AnimatedNumber from "@/ui/AnimatedNumber";
+import { useState, useEffect, useRef } from "react";
 
 export default function DifferenceSection() {
+  const [triggered, setTriggered] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTriggered(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="bg-white py-28 px-10 md:px-16">
+    <section ref={sectionRef} className="bg-white py-28 px-10 md:px-16">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
         {/* Left: golf image + floating stat card */}
         <ScrollReveal delay={0.1}>
@@ -47,7 +66,13 @@ export default function DifferenceSection() {
               }}
             >
               <div className="font-serif text-[44px] font-light text-forest leading-none">
-                94%
+                <AnimatedNumber
+                  target={94}
+                  suffix={"%"}
+                  triggered={triggered}
+                  delay={100}
+                  duration={1000}
+                />
               </div>
               <div className="font-sans text-[11px] tracking-[0.12em] uppercase text-textmuted mt-1.5 font-medium">
                 Client retention rate
@@ -68,10 +93,7 @@ export default function DifferenceSection() {
             >
               We know what a private club actually feels like.
             </h2>
-            {/* <p className="font-sans text-base leading-[1.85] text-textmuted mb-5">
-              Most agencies apply the same playbook they use for restaurants and
-              retail. The result feels generic — because it is.
-            </p> */}
+
             <p className="font-sans text-base leading-[1.85] text-textmuted mb-10">
               We've spent years embedded in private club culture. We understand
               the balance between tradition and modernization, and the prestige
