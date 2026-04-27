@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import ScrollReveal from "@/ui/ScrollReveal";
 import AnimatedNumber from "@/ui/AnimatedNumber";
 import { useState, useEffect, useRef } from "react";
+import Button from "@/ui/Button";
 
 export default function DifferenceSection() {
   const [triggered, setTriggered] = useState(false);
@@ -65,7 +65,7 @@ export default function DifferenceSection() {
                 boxShadow: "0 16px 48px rgba(0,0,0,0.12)",
               }}
             >
-              <div className="font-serif text-[44px] font-light text-forest leading-none">
+              <div className="font-serif text-[44px] font-light text-camel leading-none">
                 <AnimatedNumber
                   target={94}
                   suffix={"%"}
@@ -99,12 +99,9 @@ export default function DifferenceSection() {
               the balance between tradition and modernization, and the prestige
               your brand must project at every touchpoint.
             </p>
-            <Link
-              to="/about"
-              className="inline-block font-sans text-sm font-medium tracking-[0.1em] uppercase text-white bg-forest px-9 py-3.5 rounded-full transition-all duration-300 hover:bg-forest/85 hover:-translate-y-[2px]"
-            >
+            <Button variant="forest" to="/about">
               Our Approach
-            </Link>
+            </Button>
           </div>
         </ScrollReveal>
       </div>

@@ -218,7 +218,7 @@ export default function CapabilityScroll() {
             <div className="mt-8 flex items-center gap-2 transform translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
               <span
                 className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold"
-                style={{ color: "var(--color-camel)" }}
+                style={{ color: "var(--color-forest)" }}
               >
                 Learn More
               </span>
@@ -227,7 +227,7 @@ export default function CapabilityScroll() {
                 height="14"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="var(--color-camel)"
+                stroke="var(--color-forest)"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -250,7 +250,7 @@ export default function CapabilityScroll() {
           <div
             className="absolute top-0 h-[2px] -mt-[0.5px] rounded-full transition-transform duration-75 ease-out"
             style={{
-              background: "var(--color-camel)",
+              background: "var(--color-forest)",
               width: `${scrollData.width}%`,
               left: `${scrollData.left}%`,
             }}

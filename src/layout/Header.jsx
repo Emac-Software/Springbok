@@ -66,10 +66,7 @@ export default function Header() {
             alt="Springbok Media"
             style={{ height: 36, width: "auto" }}
           />
-          <span
-            className="font-script text-xl hidden sm:block text-cream"
-            style={{ fontWeight: 600 }}
-          >
+          <span className="font-serif text-xl hidden sm:block text-cream">
             Springbok Media
           </span>
         </Link>
@@ -90,7 +87,7 @@ export default function Header() {
             className="hidden md:inline-flex items-center font-sans text-xs font-medium tracking-[0.12em] uppercase text-white bg-camel px-6 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-[2px] hover:bg-camel/85"
             style={{ boxShadow: "0 4px 24px var(--shadow-camel)" }}
           >
-            Contact
+            Get in touch
           </Link>
 
           {/* Hamburger */}

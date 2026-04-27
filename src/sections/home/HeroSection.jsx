@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Button from "@/ui/Button";
 
 const WORDS = ["understands", "converts", "resonates", "delivers", "elevates"];
 const FS = "clamp(68px, 10vw, 148px)";
@@ -56,7 +56,7 @@ export default function HeroSection() {
       {/* ── HEADLINE — upper zone, bottom edge cuts at tree line ── */}
       <div className="relative z-10 w-full max-w-[1360px] mx-auto px-4 md:px-4 pt-36 md:pt-40">
         <motion.p
-          className="font-serif font-light text-white leading-[1.0]"
+          className="font-serif text-white leading-[1.0]"
           style={{ fontSize: FS, letterSpacing: "-0.03em" }}
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function HeroSection() {
           className="flex items-start"
         >
           <div
-            className="relative overflow-hidden"
+            className="relative"
             style={{ height: "calc(clamp(68px, 10vw, 148px) * 1.08)" }}
           >
             <AnimatePresence mode="wait">
@@ -90,7 +90,7 @@ export default function HeroSection() {
             </AnimatePresence>
           </div>
           <span
-            className="font-serif font-light text-white leading-[1.0]"
+            className="font-serif font-semibold text-white leading-[1.0]"
             style={{ fontSize: FS, letterSpacing: "-0.03em" }}
           >
             .
@@ -119,16 +119,39 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.58 }}
             >
-              <Link
-                to="/contact"
-                className="font-sans text-sm font-medium tracking-[0.1em] uppercase bg-white text-forest px-10 py-[17px] rounded-full transition-all duration-300 hover:-translate-y-[2px] hover:bg-white/90"
-                style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}
-              >
+              <Button variant="white" to="/contact">
                 Book a Discovery Call
-              </Link>
+              </Button>
             </motion.div>
           </div>
         </div>
+      </div>
+      <div className="absolute z-10 bottom-20 right-10 -translate-x-1/2 flex flex-col items-center gap-3">
+        <motion.span
+          className="text-white/50 text-xs uppercase tracking-widest font-light"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
+          Scroll
+        </motion.span>
+
+        <motion.div
+          className="w-[1px] bg-white/20 h-5 md:h-10 relative overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
+          <motion.div
+            className="w-full h-1/3 bg-white/80"
+            animate={{ y: ["-100%", "300%"] }}
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+        </motion.div>
       </div>
     </section>
   );

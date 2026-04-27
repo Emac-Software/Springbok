@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
+import Button from "@/ui/Button";
 
 export default function CtaBand() {
   return (
     <section className="bg-white pb-20 px-6 md:px-10">
-      <div
-        className="relative overflow-hidden bg-forest rounded-3xl"
-      >
+      <div className="relative overflow-hidden bg-forest rounded-3xl">
         {/* Golf image — drop /images/golf-cta.jpg to activate */}
         <img
           src="/assets/golf-hole-2.png"
@@ -31,7 +30,8 @@ export default function CtaBand() {
             <p
               className="font-sans text-[11px] tracking-[0.2em] uppercase font-medium mb-5"
               style={{
-                color: "color-mix(in srgb, var(--color-camel) 80%, transparent)",
+                color:
+                  "color-mix(in srgb, var(--color-camel) 80%, transparent)",
               }}
             >
               Ready to begin?
@@ -48,13 +48,21 @@ export default function CtaBand() {
               <em style={{ color: "var(--color-camel)" }}>your club.</em>
             </h2>
           </div>
-          <Link
+          <Button
+            variant="camel"
+            to="/contact"
+            // className="w-full py-4 text-sm justify-center mt-5"
+            onClick={() => setMenuOpen(false)}
+          >
+            Book a Discovery Call
+          </Button>
+          {/* <Link
             to="/contact"
             className="font-sans text-sm font-medium tracking-[0.1em] uppercase text-forest bg-white px-14 py-[18px] rounded-full transition-all duration-300 hover:-translate-y-[3px] flex-shrink-0"
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}
           >
             Book a Discovery Call
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>
