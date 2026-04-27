@@ -33,7 +33,7 @@ export default function DifferenceSection() {
             <div className="relative overflow-hidden rounded-[20px] h-[540px]">
               {/* Real image — drop /images/golf-course.jpg to activate */}
               <img
-                src="/assets/golf-style.jpg"
+                src="/assets/golf-swing-bunker.jpg"
                 alt="Private club grounds"
                 className="absolute inset-0 w-full h-full object-cover"
                 onError={(e) => {
