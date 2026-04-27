@@ -48,7 +48,7 @@ export default function StatsBar() {
                   duration={1000}
                 />
               </div>
-              <div className="font-sans text-[11px] tracking-[0.14em] uppercase text-white/60 mt-2 font-medium">
+              <div className="text-[11px] tracking-[0.14em] uppercase text-white/60 mt-2 font-medium">
                 {s.label}
               </div>
             </div>

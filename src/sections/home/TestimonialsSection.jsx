@@ -65,7 +65,7 @@ function TestimonialCarousel() {
         setPaused(false);
       }}
     >
-      <div className="relative overflow-hidden" style={{ minHeight: 220 }}>
+      <div className="relative overflow-hidden min-h-[220px]">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={current}
@@ -76,21 +76,11 @@ function TestimonialCarousel() {
             exit="exit"
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <blockquote
-              className="font-serif font-light text-charcoal leading-[1.5] mb-8 italic"
-              style={{ fontSize: 36 }}
-            >
+            <blockquote className="font-serif font-light leading-[1.5] mb-8 italic text-[36px]">
               "{TESTIMONIALS[current].quote}"
             </blockquote>
-            <div
-              className="mx-auto mb-5"
-              style={{
-                width: 40,
-                height: 2,
-                background: "var(--color-camel)",
-              }}
-            />
-            <p className="font-sans text-[12px] tracking-[0.14em] uppercase text-textmuted font-medium">
+            <div className="mx-auto mb-5 w-10 h-0.5 bg-camel" />
+            <p className="text-[12px] tracking-[0.14em] uppercase text-textmuted font-medium">
               {TESTIMONIALS[current].attribution}
             </p>
           </motion.div>
@@ -122,7 +112,7 @@ function TestimonialCarousel() {
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-white py-24 px-10">
+    <section className="py-24 px-10">
       <ScrollReveal>
         <TestimonialCarousel />
       </ScrollReveal>

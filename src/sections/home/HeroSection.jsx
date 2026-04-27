@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import Button from "@/ui/Button";
 
 const WORDS = ["understands", "converts", "resonates", "delivers", "elevates"];
-const FS = "clamp(68px, 10vw, 148px)";
 
 export default function HeroSection() {
   const [wordIdx, setWordIdx] = useState(0);
@@ -56,8 +55,7 @@ export default function HeroSection() {
       {/* ── HEADLINE — upper zone, bottom edge cuts at tree line ── */}
       <div className="relative z-10 w-full max-w-[1360px] mx-auto px-4 md:px-4 pt-36 md:pt-40">
         <motion.p
-          className="font-serif text-white leading-[1.0]"
-          style={{ fontSize: FS, letterSpacing: "-0.03em" }}
+          className="font-serif text-white leading-[1.0] text-[clamp(68px,10vw,148px)] tracking-[-0.03em]"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
@@ -71,15 +69,11 @@ export default function HeroSection() {
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
           className="flex items-start"
         >
-          <div
-            className="relative"
-            style={{ height: "calc(clamp(68px, 10vw, 148px) * 1.08)" }}
-          >
+          <div className="relative h-[calc(clamp(68px,10vw,148px)*1.08)]">
             <AnimatePresence mode="wait">
               <motion.span
                 key={displayed}
-                className="font-serif italic text-camel block leading-[1.0]"
-                style={{ fontSize: FS, letterSpacing: "-0.03em" }}
+                className="font-serif italic text-camel block leading-[1.0] text-[clamp(68px,10vw,148px)] tracking-[-0.03em]"
                 initial={{ opacity: 0, y: 24, skewY: 2 }}
                 animate={{ opacity: 1, y: 0, skewY: 0 }}
                 exit={{ opacity: 0, y: -24, skewY: -2 }}
@@ -89,10 +83,7 @@ export default function HeroSection() {
               </motion.span>
             </AnimatePresence>
           </div>
-          <span
-            className="font-serif font-semibold text-white leading-[1.0]"
-            style={{ fontSize: FS, letterSpacing: "-0.03em" }}
-          >
+          <span className="font-serif font-semibold text-white leading-[1.0] text-[clamp(68px,10vw,148px)] tracking-[-0.03em]">
             .
           </span>
         </motion.div>
@@ -103,8 +94,7 @@ export default function HeroSection() {
         <div className="max-w-[1360px] mx-auto px-4 md:px-4 pb-16 md:pb-20">
           <div className="max-w-[460px]">
             <motion.p
-              className="font-sans font-light leading-[1.8] mb-8"
-              style={{ fontSize: 16, color: "rgba(255,255,255,0.68)" }}
+              className="font-light leading-[1.8] mb-8 text-base text-white/[0.68]"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.45 }}

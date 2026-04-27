@@ -117,25 +117,13 @@ export default function CapabilityScroll() {
   };
 
   return (
-    <section
-      className="py-24 overflow-hidden"
-      style={{ background: "var(--color-offwhite)" }}
-    >
+    <section className="py-24 overflow-hidden bg-offwhite">
       {/* Section header */}
       <div className="px-10 md:px-16 mb-12 max-w-[1280px] mx-auto">
-        <p
-          className="font-sans text-[10px] tracking-[0.3em] uppercase font-semibold mb-4"
-          style={{ color: "var(--color-forest)" }}
-        >
+        <p className="text-[10px] text-forest tracking-[0.3em] uppercase font-semibold mb-4">
           What we offer
         </p>
-        <h2
-          className="font-serif font-light text-charcoal leading-[1.1]"
-          style={{
-            fontSize: "clamp(32px, 4vw, 52px)",
-            letterSpacing: "-0.02em",
-          }}
-        >
+        <h2 className="font-light leading-[1.1] text-[clamp(32px,4vw,52px)] tracking-[-0.02em]">
           Services tailored to you.
         </h2>
       </div>
@@ -167,59 +155,35 @@ export default function CapabilityScroll() {
             key={cap.number}
             onClick={handleLinkClick}
             draggable={false}
-            className="group flex-shrink-0 rounded-2xl p-10 flex flex-col justify-between select-none transition-all duration-400 hover:-translate-y-2 relative overflow-hidden"
-            style={{
-              width: "clamp(300px, 32vw, 400px)",
-              minHeight: 320,
-              scrollSnapAlign: "start",
-              background: "#ffffff",
-              border: "1px solid rgba(0,0,0,0.03)",
-              boxShadow: "0 10px 40px -10px rgba(0,0,0,0.04)",
-            }}
+            className="group flex-shrink-0 rounded-2xl p-10 flex flex-col justify-between select-none transition-all duration-400 hover:-translate-y-2 relative overflow-hidden w-[clamp(300px,32vw,400px)] min-h-[320px] snap-start bg-white border border-black/[0.03] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)]"
           >
             {/* Top */}
             <div>
               <div className="flex items-center justify-between mb-8">
-                <span
-                  className="font-sans text-[13px] tracking-[0.25em] uppercase font-semibold"
-                  style={{ color: "var(--color-camel)" }}
-                >
+                <span className="text-[13px] tracking-[0.25em] uppercase font-semibold text-camel">
                   {cap.number}
                 </span>
                 <span
-                  className="font-sans text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full font-medium"
+                  className="text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full font-medium text-camel"
                   style={{
                     background:
                       "color-mix(in srgb, var(--color-camel) 12%, transparent)",
-                    color: "var(--color-camel)",
                   }}
                 >
                   {cap.tag}
                 </span>
               </div>
-              <h3
-                className="font-serif font-light text-charcoal leading-[1.1] mb-5"
-                style={{
-                  fontSize: "clamp(24px, 2.2vw, 30px)",
-                  letterSpacing: "-0.01em",
-                }}
-              >
+              <h3 className="font-light leading-[1.1] mb-5 text-[clamp(24px,2.2vw,30px)] tracking-[-0.01em]">
                 {cap.title}
               </h3>
-              <p
-                className="font-sans text-[14.5px] leading-[1.7] font-light"
-                style={{ color: "var(--color-textmuted)" }}
-              >
+              <p className="text-[14.5px] leading-[1.7] font-light text-textmuted">
                 {cap.body}
               </p>
             </div>
 
             {/* Hover Reveal: Learn More */}
             <div className="mt-8 flex items-center gap-2 transform translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-              <span
-                className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold"
-                style={{ color: "var(--color-forest)" }}
-              >
+              <span className="text-[10px] tracking-[0.2em] uppercase font-semibold text-forest">
                 Learn More
               </span>
               <svg
@@ -227,11 +191,10 @@ export default function CapabilityScroll() {
                 height="14"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="var(--color-forest)"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="transform transition-transform duration-300 group-hover:translate-x-1"
+                className="stroke-forest transform transition-transform duration-300 group-hover:translate-x-1"
               >
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -244,13 +207,11 @@ export default function CapabilityScroll() {
       {/* Dynamic Scroll Progress Line */}
       <div className="max-w-[1280px] mx-auto px-10 md:px-16 mt-4">
         <div
-          className="w-full h-[1px] relative rounded-full"
-          style={{ background: "rgba(0,0,0,0.06)" }}
+          className="w-full h-[1px] relative rounded-full bg-black/[0.06]"
         >
           <div
-            className="absolute top-0 h-[2px] -mt-[0.5px] rounded-full transition-transform duration-75 ease-out"
+            className="absolute top-0 h-[2px] -mt-[0.5px] rounded-full transition-transform duration-75 ease-out bg-forest"
             style={{
-              background: "var(--color-forest)",
               width: `${scrollData.width}%`,
               left: `${scrollData.left}%`,
             }}
