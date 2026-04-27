@@ -35,7 +35,7 @@ export default function DifferenceSection() {
               <img
                 src="/assets/golf-swing-bunker.jpg"
                 alt="Private club grounds"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover object-bottom"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                 }}
