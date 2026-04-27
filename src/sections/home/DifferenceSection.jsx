@@ -3,6 +3,8 @@ import AnimatedNumber from "@/ui/AnimatedNumber";
 import { useState, useEffect, useRef } from "react";
 import Button from "@/ui/Button";
 
+const CLIENT_RETENTION_RATE = 94;
+
 export default function DifferenceSection() {
   const [triggered, setTriggered] = useState(false);
   const sectionRef = useRef(null);
@@ -67,7 +69,7 @@ export default function DifferenceSection() {
             >
               <div className="font-serif text-[44px] font-light text-camel leading-none">
                 <AnimatedNumber
-                  target={94}
+                  target={CLIENT_RETENTION_RATE}
                   suffix={"%"}
                   triggered={triggered}
                   delay={100}

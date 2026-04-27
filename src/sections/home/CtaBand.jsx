@@ -51,18 +51,10 @@ export default function CtaBand() {
           <Button
             variant="camel"
             to="/contact"
-            // className="w-full py-4 text-sm justify-center mt-5"
             onClick={() => setMenuOpen(false)}
           >
             Book a Discovery Call
           </Button>
-          {/* <Link
-            to="/contact"
-            className="font-sans text-sm font-medium tracking-[0.1em] uppercase text-forest bg-white px-14 py-[18px] rounded-full transition-all duration-300 hover:-translate-y-[3px] flex-shrink-0"
-            style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}
-          >
-            Book a Discovery Call
-          </Link> */}
         </div>
       </div>
     </section>

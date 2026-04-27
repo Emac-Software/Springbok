@@ -48,7 +48,7 @@ export default function CapabilityScroll() {
   const [grabbing, setGrabbing] = useState(false);
   const [paddingOffset, setPaddingOffset] = useState("40px");
 
-  // Custom scroll indicator state
+  // Scroll indicator state
   const [scrollData, setScrollData] = useState({ width: 0, left: 0 });
 
   // Calculates the progress line width and position based on scroll amount

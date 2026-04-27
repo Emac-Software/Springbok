@@ -40,7 +40,7 @@ export default function Header() {
     `font-sans text-xs tracking-[0.1em] uppercase transition-all duration-200 whitespace-nowrap px-[18px] py-2.5 rounded-full ${
       isActive
         ? "bg-camel text-white"
-        : "text-white/80 hover:text-white hover:bg-white/10"
+        : "text-white hover:text-white hover:bg-white/10"
     }`;
 
   const mobileLinkClass = ({ isActive }) =>
