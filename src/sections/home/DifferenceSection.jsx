@@ -31,7 +31,6 @@ export default function DifferenceSection() {
           <div className="relative pb-7 pr-7">
             {/* Image container */}
             <div className="relative overflow-hidden rounded-[20px] h-[540px]">
-              {/* Real image — drop /images/golf-course.jpg to activate */}
               <img
                 src="/assets/golf-swing-bunker.jpg"
                 alt="Private club grounds"
