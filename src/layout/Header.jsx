@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "@/ui/Button";
 
@@ -17,29 +17,34 @@ const ALL_LINKS = [
 ];
 
 export default function Header() {
-  const [progress, setProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
+  const location = useLocation();
+
+  // Check if we are currently on the homepage
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => {
-      const heroHeight = window.innerHeight;
-      const fadeStart = heroHeight * 0.78;
-      const fadeEnd = heroHeight * 1.05;
-      const p = Math.min(
-        1,
-        Math.max(0, (window.scrollY - fadeStart) / (fadeEnd - fadeStart)),
-      );
-      setProgress(p);
+    const handleScroll = () => {
+      const statsSectionHeight = 140;
+      const threshold = window.innerHeight + statsSectionHeight;
+      setScrolledPastHero(window.scrollY > threshold);
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Call it once on mount to ensure correct state if the user refreshes halfway down the page
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Hero is always dark (golf image) so nav text is always white
+  const isHeaderWhite = isHomePage && !scrolledPastHero;
+
   const pillLinkClass = ({ isActive }) =>
     `font-sans text-xs tracking-[0.1em] uppercase transition-all duration-200 whitespace-nowrap px-[18px] py-2.5 rounded-full ${
       isActive
-        ? "bg-camel text-white"
+        ? "bg-white/10 text-white"
         : "text-white hover:text-white hover:bg-white/10"
     }`;
 
@@ -47,32 +52,40 @@ export default function Header() {
     `block w-full font-sans text-base tracking-[0.08em] uppercase py-3.5 border-b border-white/[0.06] text-left transition-colors duration-200 ${
       isActive ? "text-camel" : "text-cream/70"
     }`;
-
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: `color-mix(in srgb, var(--color-charcoal) ${Math.round(progress * 28)}%, transparent)`,
-        backdropFilter: `blur(${(progress * 12).toFixed(1)}px)`,
-        WebkitBackdropFilter: `blur(${(progress * 12).toFixed(1)}px)`,
-        boxShadow: progress > 0.95 ? "0 1px 0 rgba(55,55,55,0.07)" : "none",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        borderBottom: !isHeaderWhite
+          ? "1px solid rgba(28, 28, 26, 0.05)"
+          : "1px solid transparent",
       }}
     >
       <div className="max-w-[1360px] mx-auto px-9 h-[76px] flex items-center justify-between">
         {/* Left — Logo */}
         <Link to="/" className="flex items-center gap-2.5 z-10 flex-shrink-0">
+          {/* Logo Icon */}
           <img
             src="/logo/head-logo.svg"
             alt="Springbok Media"
             style={{ height: 36, width: "auto" }}
+            className={"transition-all duration-300 invert-0"}
           />
-          <span className="font-serif text-xl hidden sm:block text-cream">
+
+          {/* Logo Text */}
+          <span
+            className={`font-serif text-xl hidden sm:block transition-colors duration-300 ${
+              isHeaderWhite ? "text-white" : "text-charcoal"
+            }`}
+          >
             Springbok Media
           </span>
         </Link>
 
         {/* Center — Glass pill nav */}
-        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 p-1.5 backdrop-blur-sm rounded-full bg-white/[0.08] border border-white/[0.14]">
+        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1  p-1.5 backdrop-blur-sm rounded-full bg-forest bg-opacity-50 border border-white/[0.14]">
           {NAV_LINKS.map((link) => (
             <NavLink key={link.to} to={link.to} className={pillLinkClass}>
               {link.label}
@@ -84,8 +97,8 @@ export default function Header() {
         <div className="flex items-center gap-3 z-10">
           <Link
             to="/contact"
-            className="hidden md:inline-flex items-center font-sans text-xs font-medium tracking-[0.12em] uppercase text-white bg-camel px-6 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-[2px] hover:bg-camel/85"
-            style={{ boxShadow: "0 4px 24px var(--shadow-camel)" }}
+            className="hidden md:inline-flex items-center font-sans text-xs font-medium tracking-[0.12em] uppercase text-forest bg-white px-6 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-[2px] hover:bg-forest/85"
+            style={{ boxShadow: "0 4px 24px var(--shadow-forest)" }}
           >
             Get in touch
           </Link>
