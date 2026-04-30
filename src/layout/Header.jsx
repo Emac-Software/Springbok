@@ -85,7 +85,10 @@ export default function Header() {
         </Link>
 
         {/* Center — Glass pill nav */}
-        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1  p-1.5 backdrop-blur-sm rounded-full bg-forest bg-opacity-50 border border-white/[0.14]">
+        <nav
+          className={`hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 p-1.5 backdrop-blur-sm rounded-full bg-opacity-50 border border-white/[0.14] 
+            ${!isHeaderWhite ? "bg-forest" : "bg-white/[0.08]"}`}
+        >
           {NAV_LINKS.map((link) => (
             <NavLink key={link.to} to={link.to} className={pillLinkClass}>
               {link.label}
@@ -97,8 +100,8 @@ export default function Header() {
         <div className="flex items-center gap-3 z-10">
           <Link
             to="/contact"
-            className="hidden md:inline-flex items-center font-sans text-xs font-medium tracking-[0.12em] uppercase text-forest bg-white px-6 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-[2px] hover:bg-forest/85"
-            style={{ boxShadow: "0 4px 24px var(--shadow-forest)" }}
+            className="hidden md:inline-flex items-center font-sans text-xs font-medium tracking-[0.12em] uppercase text-forest bg-white px-6 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-[1px] hover:bg-camel hover:text-white"
+            style={{ boxShadow: "0 4px 24px var(--shadow-charcoal)" }}
           >
             Get in touch
           </Link>
