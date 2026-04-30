@@ -2,6 +2,7 @@ import ScrollReveal from "@/ui/ScrollReveal";
 import AnimatedNumber from "@/ui/AnimatedNumber";
 import { useState, useEffect, useRef } from "react";
 import Button from "@/ui/Button";
+import SectionHeading from "@/ui/SectionHeading";
 
 const CLIENT_RETENTION_RATE = 94;
 
@@ -70,18 +71,14 @@ export default function DifferenceSection() {
         {/* Right: text */}
         <ScrollReveal delay={0.2}>
           <div>
-            <p className="text-[11px] tracking-[0.2em] uppercase text-forest mb-5 font-semibold">
-              The Springbok Difference
-            </p>
-            <h2 className="text-[54px] font-light leading-[1.1] mb-6 tracking-[-0.01em]">
-              We know what a private club actually feels like.
-            </h2>
-
-            <p className="leading-[1.85] text-textmuted mb-10">
-              We've spent years embedded in private club culture. We understand
+            <SectionHeading
+              eyebrow="The Springbok Difference"
+              subtitle="We've spent years embedded in private club culture. We understand
               the balance between tradition and modernization, and the prestige
-              your brand must project at every touchpoint.
-            </p>
+              your brand must project at every touchpoint."
+            >
+              Let's start a real conversation.
+            </SectionHeading>
             <Button variant="forest" to="/about">
               Our Approach
             </Button>

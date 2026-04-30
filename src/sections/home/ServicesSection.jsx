@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import SectionHeading from "@/ui/SectionHeading";
 
 const CAPABILITIES = [
   {
@@ -120,12 +121,20 @@ export default function CapabilityScroll() {
     <section className="py-24 overflow-hidden bg-offwhite">
       {/* Section header */}
       <div className="px-10 md:px-16 mb-12 max-w-[1280px] mx-auto">
-        <p className="text-[10px] text-forest tracking-[0.3em] uppercase font-semibold mb-4">
+        <SectionHeading
+          eyebrow="What we offer"
+          // subtitle="We've spent years embedded in private club culture. We understand
+          // the balance between tradition and modernization, and the prestige
+          // your brand must project at every touchpoint."
+        >
+          Services tailored to you.
+        </SectionHeading>
+        {/* <p className="text-[10px] text-forest tracking-[0.3em] uppercase font-semibold mb-4">
           What we offer
         </p>
         <h2 className="font-light leading-[1.1] text-[clamp(32px,4vw,52px)] tracking-[-0.02em]">
           Services tailored to you.
-        </h2>
+        </h2> */}
       </div>
 
       {/* Scrollable track */}
@@ -206,9 +215,7 @@ export default function CapabilityScroll() {
 
       {/* Dynamic Scroll Progress Line */}
       <div className="max-w-[1280px] mx-auto px-10 md:px-16 mt-4">
-        <div
-          className="w-full h-[1px] relative rounded-full bg-black/[0.06]"
-        >
+        <div className="w-full h-[1px] relative rounded-full bg-black/[0.06]">
           <div
             className="absolute top-0 h-[2px] -mt-[0.5px] rounded-full transition-transform duration-75 ease-out bg-forest"
             style={{

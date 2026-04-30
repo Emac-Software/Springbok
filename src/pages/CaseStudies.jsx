@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, forwardRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import SectionHeading from "@/ui/SectionHeading";
 import CaseSlide from "@/sections/cases/CaseSlide";
 import Button from "@/ui/Button";
 
@@ -118,21 +119,17 @@ export default function CaseStudiesPage({ setPage = () => {} }) {
         <div className="w-1/2 shrink-0 sticky top-[76px] h-[calc(100vh-76px)] flex items-center justify-end">
           <div className="w-full max-w-[700px] flex flex-col gap-10 py-[72px] px-[52px] border-r border-charcoal/10">
             <div>
-              <div className="text-[11px] tracking-[0.2em] uppercase text-forest mb-5 font-semibold">
-                Proof of Work
-              </div>
-              <h1 className="text-[54px] font-light leading-[1.05] tracking-[-0.02em] mb-7">
+              <SectionHeading
+                eyebrow="Proof of Work"
+                subtitle="Names changed at client request. Every result is real and
+                independently verifiable."
+              >
                 Work that speaks for itself.
-              </h1>
-              <p className="leading-[1.85] text-textmuted">
-                Names changed at client request. Every result is real and
-                independently verifiable.
-              </p>
+              </SectionHeading>
+              <Button to="/contact" variant="forest" className="">
+                Start your project
+              </Button>
             </div>
-
-            <Button to="/contact" variant="forest" className="">
-              Start your project
-            </Button>
 
             {/* Active Case Mini-Detail */}
             <div className="border-t border-white/10 pt-8">
