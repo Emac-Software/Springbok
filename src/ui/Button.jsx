@@ -22,7 +22,7 @@ export default function Button({
   ...props
 }) {
   const base =
-    "font-sans text-sm font-medium tracking-[0.1em] uppercase px-10 py-[17px] rounded-full transition-all duration-300 hover:-translate-y-[2px]";
+    "font-sans text-sm font-medium tracking-[0.1em] uppercase px-10 py-[17px] rounded-full transition-all duration-300 hover:-translate-y-[2px] w-fit";
   const classes = `${base} ${variants[variant] ?? variants.primary} ${className}`;
 
   if (to) {
