@@ -1,89 +1,245 @@
-import ScrollReveal from "@/ui/ScrollReveal";
+import React, { useState, useEffect, useRef, forwardRef } from "react";
+import CaseSlide from "@/sections/cases/CaseSlide";
 import Button from "@/ui/Button";
 
-const CASES = [
+// -- DATA --
+const cases = [
   {
-    label: "Golf Club · Ontario",
-    title: "Revitalizing Member Acquisition for a 400-Member Club",
-    outcome: "47% increase in prospective member inquiries within 6 months.",
-    tags: ["Digital Advertising", "Website Redesign", "Email Marketing"],
+    id: "01",
+    title: "Muskoka Highlands Golf Club",
+    label: "Social & Email",
+    year: "2023",
+    description:
+      "Repositioned a storied Muskoka club for the next generation of members without alienating its founding families.",
+    results: [
+      "42% email open rate lift",
+      "3× Instagram engagement",
+      "First sold-out event in 4 years",
+    ],
+    images: [
+      "/assets/golf-hole-1.png",
+      "/assets/golf-style.jpg",
+      "/assets/golf-hole-17.png",
+    ],
   },
   {
-    label: "Country Club · Greater Toronto Area",
-    title: "Building a Year-Round Content & Engagement Program",
-    outcome:
-      "Member event attendance up 30%. Open rates on club newsletters doubled.",
-    tags: ["Social Media", "Email Campaigns", "Content Strategy"],
+    id: "02",
+    title: "Lakeview Country Club",
+    label: "Reputation Management",
+    year: "2023",
+    description:
+      "Turned a reputational crisis into a communications advantage ahead of a $12M capital campaign.",
+    results: [
+      "Rating 3.2 → 4.6 in 8 months",
+      "Capital campaign fully funded",
+      "Regional press coverage",
+    ],
+    images: [
+      "/assets/golf-swing-bunker.jpg",
+      "/assets/golf-swing-range.jpg",
+      "/assets/golf-swing-rough.jpg",
+    ],
   },
   {
-    label: "Sports Club · Ontario",
-    title: "Launching a Referral-Driven Growth Campaign",
-    outcome: "22 new member applications in the first quarter of the program.",
-    tags: ["Referral Marketing", "Campaign Strategy", "Analytics"],
+    id: "03",
+    title: "Thornbury Athletic & Racquet Club",
+    label: "Member Acquisition",
+    year: "2024",
+    description:
+      "Launched a junior programme that filled a waiting list in its first season and revitalised the membership pipeline.",
+    results: [
+      "48 junior memberships",
+      "Family membership +22% YOY",
+      "2 national programme awards",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=600&q=80&auto=format&fit=crop",
+    ],
+  },
+  {
+    id: "04",
+    title: "Rideau Lakes Sailing Club",
+    label: "Content & Events",
+    year: "2024",
+    description:
+      "Built a seasonal content engine that made their short summer calendar feel like a year-round conversation.",
+    results: [
+      "Event attendance +38%",
+      "New member enquiries doubled",
+      "Regatta media coverage",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469796466635-455ede028aca?w=600&q=80&auto=format&fit=crop",
+    ],
   },
 ];
 
-export default function CaseStudies() {
-  return (
-    <div className="pt-28 pb-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <ScrollReveal>
-          <div className="text-center mb-20">
-            <p className="font-sans text-xs tracking-[0.3em] uppercase text-camel mb-4">
-              Results
-            </p>
-            <h1 className="font-serif text-6xl md:text-7xl font-normal text-cream mb-6">
-              Case Studies
-            </h1>
-            <p className="font-sans text-cream/50 max-w-md mx-auto text-sm leading-relaxed">
-              A sample of the results we've helped clubs achieve. Client names
-              are withheld out of respect for their privacy.
-            </p>
-          </div>
-        </ScrollReveal>
+// -- CONTENT --
+export default function CaseStudiesPage({ setPage = () => {} }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollContainerRef = useRef(null);
+  const slideRefs = useRef([]);
 
-        <div className="flex flex-col gap-8">
-          {CASES.map((c, i) => (
-            <ScrollReveal key={c.title} delay={i * 0.1}>
-              <div className="p-8 md:p-10 border border-cream/10 rounded-xl hover:border-camel/30 transition-colors duration-300">
-                <p className="font-sans text-xs tracking-[0.2em] uppercase text-camel/70 mb-4">
-                  {c.label}
-                </p>
-                <h2 className="font-serif text-3xl text-cream font-normal mb-4 leading-tight">
-                  {c.title}
-                </h2>
-                <p className="font-sans text-sm text-forest font-medium mb-6 leading-relaxed">
-                  {c.outcome}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {c.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-sans text-xs tracking-wide text-cream/40 border border-cream/10 rounded-full px-3 py-1"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = slideRefs.current.indexOf(entry.target);
+            if (index !== -1) {
+              setActiveIndex(index);
+            }
+          }
+        });
+      },
+      {
+        root: scrollContainerRef.current,
+        threshold: 0.6,
+      },
+    );
+
+    slideRefs.current.forEach((slide) => {
+      if (slide) observer.observe(slide);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const activeCase = cases[activeIndex];
+
+  return (
+    <div className="pt-[76px] min-h-screen">
+      <div className="flex h-[calc(100vh-76px)]">
+        {/* ── LEFT: Sticky Panel ── */}
+        <div className="w-1/2 shrink-0 sticky top-[76px] h-[calc(100vh-76px)] flex items-center justify-end">
+          <div className="w-full max-w-[700px] flex flex-col gap-10 py-[72px] px-[52px] border-r border-charcoal/10">
+            <div>
+              <div className="text-[11px] tracking-[0.2em] uppercase text-forest mb-5 font-semibold">
+                Proof of Work
               </div>
-            </ScrollReveal>
-          ))}
+              <h1 className="text-[54px] font-light leading-[1.05] tracking-[-0.02em] mb-7">
+                Work that speaks for itself.
+              </h1>
+              <p className="leading-[1.85] text-textmuted">
+                Names changed at client request. Every result is real and
+                independently verifiable.
+              </p>
+            </div>
+
+            <Button to="/contact" variant="forest" className="">
+              Start your project
+            </Button>
+
+            {/* Active Case Mini-Detail */}
+            <div className="border-t border-white/10 pt-8">
+              <div className="font-sans text-[10px] text-textmuted tracking-[0.2em] uppercase mb-5">
+                {activeIndex + 1} / {cases.length}
+              </div>
+              <div className="flex flex-col gap-2.5">
+                {activeCase.results.map((r, i) => (
+                  <div key={i} className="flex items-center gap-2.5">
+                    <span className="w-5 h-[1px] bg-forest shrink-0" />
+                    <span className="font-sans text-[12.5px] font-normal tracking-[0.02em] transition-colors duration-500">
+                      {r}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        <ScrollReveal delay={0.2}>
-          <div className="text-center mt-16">
-            <p className="font-sans text-sm text-cream/40 mb-6">
-              Want results like these for your club?
-            </p>
-            <Button
-              variant="primary"
-              to="/contact"
-              className="px-10 py-4 text-xs"
-            >
-              Book a Discovery Call
-            </Button>
+        {/* ── RIGHT: Vertical Wheel Carousel ── */}
+        <div className="flex-1 relative">
+          <div
+            ref={scrollContainerRef}
+            className="w-full h-full flex flex-col items-center overflow-y-auto snap-y snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
+            {cases.map((study, index) => (
+              <CaseSlide
+                key={study.id}
+                study={study}
+                index={index}
+                activeIndex={activeIndex}
+                ref={(el) => (slideRefs.current[index] = el)}
+              />
+            ))}
           </div>
-        </ScrollReveal>
+
+          {/* Scroll Nav Dots */}
+          <div className="absolute right-9 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50 pointer-events-none">
+            {cases.map((_, i) => (
+              <div
+                key={i}
+                className="transition-all duration-300 rounded-full"
+                style={{
+                  width: i === activeIndex ? 24 : 8,
+                  height: 8,
+                  background:
+                    i === activeIndex
+                      ? "var(--color-camel)"
+                      : "color-mix(in srgb, var(--color-camel) 30%, transparent)",
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Up / Down pill arrows */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-50">
+            <button
+              onClick={() => {
+                const i = Math.max(activeIndex - 1, 0);
+                const slide = slideRefs.current[i];
+                if (scrollContainerRef.current && slide)
+                  scrollContainerRef.current.scrollTo({
+                    top: slide.offsetTop,
+                    behavior: "smooth",
+                  });
+              }}
+              disabled={activeIndex === 0}
+              aria-label="Previous case"
+              className="w-9 h-9 rounded-full flex items-center justify-center border border-cream/[0.12] bg-charcoal/40 backdrop-blur-sm text-cream/60 transition-all duration-200 hover:border-camel/40 hover:text-cream disabled:opacity-20 disabled:pointer-events-none"
+            >
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path
+                  d="M1.5 8.5L6.5 3.5L11.5 8.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={() => {
+                const i = Math.min(activeIndex + 1, cases.length - 1);
+                const slide = slideRefs.current[i];
+                if (scrollContainerRef.current && slide)
+                  scrollContainerRef.current.scrollTo({
+                    top: slide.offsetTop,
+                    behavior: "smooth",
+                  });
+              }}
+              disabled={activeIndex === cases.length - 1}
+              aria-label="Next case"
+              className="w-9 h-9 rounded-full flex items-center justify-center border border-cream/[0.12] bg-charcoal/40 backdrop-blur-sm text-cream/60 transition-all duration-200 hover:border-camel/40 hover:text-cream disabled:opacity-20 disabled:pointer-events-none"
+            >
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path
+                  d="M1.5 4.5L6.5 9.5L11.5 4.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
