@@ -18,8 +18,9 @@ import MessageTab from "./MessageTab";
 import CalendlyTab from "./CalendlyTab";
 
 const TwitterLink = "";
-const InstagramLink = "";
-const LinkedInLink = "";
+const InstagramLink =
+  "https://www.instagram.com/springbmedia?igsh=eTdoNzRpZjU3ZDlh&utm_source=qr";
+const LinkedInLink = "https://www.linkedin.com/company/springbokmedia/";
 
 const topGlow = {
   background:
@@ -99,9 +100,9 @@ export default function ContactFormSection() {
             <div className="h-px w-full bg-white/20 my-8 relative" />
 
             <div className="flex gap-3 relative">
-              <SocialButton href={TwitterLink} label="X / Twitter">
+              {/* <SocialButton href={TwitterLink} label="X / Twitter">
                 <FontAwesomeIcon icon={faXTwitter} className="w-4 h-4" />
-              </SocialButton>
+              </SocialButton> */}
               <SocialButton href={InstagramLink} label="Instagram">
                 <FontAwesomeIcon icon={faInstagram} className="w-4 h-4" />
               </SocialButton>

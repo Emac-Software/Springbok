@@ -63,13 +63,15 @@ export default function CalendlyTab() {
         ))}
       </div>
 
-      <div className="flex-1 border border-dashed border-camel/30 rounded-xl p-12 flex flex-col items-center justify-center text-center gap-3 min-h-[220px]">
-        <p className="font-sans text-xs tracking-[0.12em] uppercase text-textmuted/60 font-medium">
-          Calendly Embed
-        </p>
-        <p className="font-sans text-xs text-camel/60">
-          calendly.com/springbokmedia
-        </p>
+      <div className="flex-1 w-full overflow-hidden bg-white">
+        <iframe
+          // 1. Notice the background_color=ffffff at the end of the URL
+          src="https://calendly.com/jakedavis667/30min?hide_event_type_details=1"
+          // 2. Give the iframe enough height so it doesn't need to scroll
+          className="w-full h-[750px] border-none bg-white"
+          scrolling="no"
+          title="Schedule a Discovery Call"
+        />
       </div>
     </div>
   );
