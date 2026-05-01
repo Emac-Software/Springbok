@@ -7,7 +7,6 @@ const NAV_LINKS = [
   { label: "Services", to: "/services" },
   { label: "About", to: "/about" },
   { label: "Case Studies", to: "/case-studies" },
-  { label: "Industries", to: "/industries" },
 ];
 
 const ALL_LINKS = [

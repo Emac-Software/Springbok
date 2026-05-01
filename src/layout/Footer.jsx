@@ -24,7 +24,6 @@ const LINK_COLS = [
     links: [
       { label: "About Us", to: "/about" },
       { label: "Case Studies", to: "/case-studies" },
-      { label: "Industries", to: "/industries" },
       { label: "Contact", to: "/contact" },
     ],
   },
