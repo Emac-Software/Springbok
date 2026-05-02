@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Layout from "@/layout/Layout";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
@@ -9,6 +10,8 @@ import Services from "./pages/Services";
 
 export default function App() {
   return (
+    <>
+    <Analytics />
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -18,5 +21,6 @@ export default function App() {
         <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>
+    </>
   );
 }
