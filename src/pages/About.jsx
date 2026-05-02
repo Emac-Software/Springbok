@@ -1,103 +1,78 @@
 import ScrollReveal from "@/ui/ScrollReveal";
 import Button from "@/ui/Button";
-
-const VALUES = [
-  {
-    title: "Niche Over Generalist",
-    body: "We work exclusively in the private club space. This isn't a vertical we dabbled in — it's all we do, and it shows in the quality of our work.",
-  },
-  {
-    title: "Honest Counsel",
-    body: "We'll tell you when something won't work. Our job is to be your marketing partner, not to sell you services you don't need.",
-  },
-  {
-    title: "Discretion",
-    body: "We understand that clubs operate with a level of privacy and tradition that demands a tactful partner. Your brand, your reputation, always protected.",
-  },
-];
+import SectionHeading from "@/ui/SectionHeading";
+import ValuesSection from "@/sections/about/ValuesSection";
 
 export default function About() {
   return (
-    <div className="pt-28 pb-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <ScrollReveal>
-          <div className="text-center mb-20">
-            <p className="font-sans text-xs tracking-[0.3em] uppercase text-camel mb-4">
-              Our Story
-            </p>
-            <h1 className="font-serif text-6xl md:text-7xl font-normal text-cream">
-              About Us
-            </h1>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-24">
+    <>
+      {/* Section 1 — Hero */}
+      <section className="bg-offwhite pt-36 pb-28 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Left — Heading + CTAs */}
           <ScrollReveal>
-            <div className="aspect-square rounded-2xl border border-cream/10 flex items-center justify-center bg-charcoal/50">
-              <img
-                src="/media/full-logo.png"
-                alt="Springbok Media"
-                className="w-2/3 opacity-70"
-              />
+            <div>
+              <SectionHeading
+                eyebrow="Our Story"
+                as="h1"
+                headingClassName="text-[36px] md:text-[54px]"
+                subtitle="We're a small, senior team dedicated entirely to private clubs in Ontario. No generalists. No handoffs. Just focused, expert marketing. 
+                We're a small, senior team dedicated entirely to private clubs in Ontario. No generalists. No handoffs. Just focused, expert marketing."
+              >
+                Marketing built for those who know the difference.
+              </SectionHeading>
+              <div className="flex flex-wrap gap-4">
+                <Button variant="forest" to="/contact">
+                  Book a Discovery Call
+                </Button>
+                <Button variant="outline" to="/case-studies">
+                  View Our Work
+                </Button>
+              </div>
             </div>
           </ScrollReveal>
 
+          {/* Right — Image pop-out composition */}
           <ScrollReveal delay={0.15}>
-            <div className="pt-4">
-              <h2 className="font-serif text-4xl text-cream font-normal mb-6 leading-tight">
-                Built from a Genuine Love of Club Culture
-              </h2>
-              <p className="font-sans text-cream/50 text-sm leading-relaxed mb-5">
-                Springbok Media was founded on a simple frustration: private
-                clubs were being served by generalist agencies who treated them
-                like any other client. The result was bland, ineffective
-                marketing that missed the nuance of club culture entirely.
-              </p>
-              <p className="font-sans text-cream/50 text-sm leading-relaxed mb-5">
-                We built Springbok Media to be different. Every strategy,
-                campaign, and conversation is informed by a genuine
-                understanding of what makes private clubs unique — their
-                traditions, their members, and the unspoken standards that
-                define great clubs.
-              </p>
-              <p className="font-sans text-cream/50 text-sm leading-relaxed mb-10">
-                We're a small, senior team. You won't be handed off to a junior
-                account manager. You'll work directly with the people who built
-                this company and who care deeply about your club's reputation.
-              </p>
-              <Button
-                variant="outline"
-                to="/contact"
-                className="px-8 py-3 text-xs"
-              >
-                Work With Us
-              </Button>
+            <div className="relative pt-10 pb-4 px-4">
+              {/* Decorative background frame */}
+              <div
+                className="absolute inset-0 top-10 rounded-2xl rotate-1"
+                style={{
+                  background:
+                    "color-mix(in srgb, var(--color-camel) 12%, transparent)",
+                }}
+              />
+
+              {/* Image + badge */}
+              <div className="relative z-10">
+                <img
+                  src="/assets/profile.png"
+                  alt="Private golf club in Ontario"
+                  className="w-full h-[520px] object-cover object-center rounded-xl -translate-y-6 shadow-[0_24px_64px_rgba(0,0,0,0.12)] "
+                />
+
+                {/* Floating badge */}
+                <div className="absolute bottom-2 -left-3 md:-left-6 z-20 bg-white rounded-xl shadow-xl px-5 py-4">
+                  <p className="text-[11px] tracking-[0.15em] uppercase font-semibold text-forest mb-1.5">
+                    Ontario-Focused
+                  </p>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-camel text-sm leading-none">
+                      ★★★★★
+                    </span>
+                    <span className="text-[10px] tracking-[0.08em] uppercase text-textmuted font-medium">
+                      Private Clubs
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </ScrollReveal>
         </div>
+      </section>
 
-        <ScrollReveal>
-          <div className="border-t border-cream/10 pt-16">
-            <h2 className="font-serif text-4xl text-cream font-normal text-center mb-12">
-              Our Values
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {VALUES.map((v, i) => (
-                <ScrollReveal key={v.title} delay={i * 0.1}>
-                  <div className="p-6 border border-cream/10 rounded-xl">
-                    <h3 className="font-serif text-xl text-camel font-normal mb-3">
-                      {v.title}
-                    </h3>
-                    <p className="font-sans text-sm text-cream/50 leading-relaxed">
-                      {v.body}
-                    </p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
-      </div>
-    </div>
+      <ValuesSection />
+    </>
   );
 }

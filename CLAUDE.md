@@ -75,3 +75,5 @@ When a `style={}` block mixes dynamic and static properties, extract the static 
 - `head-logo.svg` — logomark only (prefer SVG)
 
 **Aesthetic direction:** Warm, confident, modern, grounded. Avoid generic full-service agency layouts and flashy tech-startup aesthetics. Animations should be subtle — clean hover states and scroll fade-ins only, no heavy motion.
+
+**DO NOT TEST**
