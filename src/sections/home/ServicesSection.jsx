@@ -8,35 +8,35 @@ const CAPABILITIES = [
     title: "Social Media Strategy",
     body: "Platform-native narratives reflecting your club's distinct prestige.",
     tag: "Organic + Paid",
-    slug: "/services/social-media",
+    slug: "/services",
   },
   {
     number: "02",
     title: "Email & Member Comms",
     body: "Elegant, targeted communications for refined member expectations.",
     tag: "Retention Focus",
-    slug: "/services/email-comms",
+    slug: "/services",
   },
   {
     number: "03",
     title: "Content & Photography",
     body: "Architectural and lifestyle visuals for a cohesive brand identity.",
     tag: "Visual Identity",
-    slug: "/services/content-photography",
+    slug: "/services",
   },
   {
     number: "04",
     title: "Reputation & Search",
     body: "Meticulously curated digital footprints reflecting your legacy.",
     tag: "Always-On",
-    slug: "/services/reputation",
+    slug: "/services",
   },
   {
     number: "05",
     title: "Member Acquisition",
     body: "Precision-targeted campaigns to attract aligned prospective members.",
     tag: "Growth",
-    slug: "/services/acquisition",
+    slug: "/services",
   },
 ];
 
@@ -121,20 +121,9 @@ export default function CapabilityScroll() {
     <section className="py-24 overflow-hidden bg-offwhite">
       {/* Section header */}
       <div className="px-10 md:px-16 mb-12 max-w-[1280px] mx-auto">
-        <SectionHeading
-          eyebrow="What we offer"
-          // subtitle="We've spent years embedded in private club culture. We understand
-          // the balance between tradition and modernization, and the prestige
-          // your brand must project at every touchpoint."
-        >
+        <SectionHeading eyebrow="What we offer">
           Services tailored to you.
         </SectionHeading>
-        {/* <p className="text-[10px] text-forest tracking-[0.3em] uppercase font-semibold mb-4">
-          What we offer
-        </p>
-        <h2 className="font-light leading-[1.1] text-[clamp(32px,4vw,52px)] tracking-[-0.02em]">
-          Services tailored to you.
-        </h2> */}
       </div>
 
       {/* Scrollable track */}

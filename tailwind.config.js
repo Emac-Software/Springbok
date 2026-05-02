@@ -22,6 +22,15 @@ export default {
         redondo: ['"Redondo"', "Georgia", "serif"],
         "redondo-bold": ['"Redondo Bold"', "Georgia", "serif"],
       },
+      animation: {
+        marquee: "marqueeScroll 38s linear infinite",
+      },
+      keyframes: {
+        marqueeScroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
     },
   },
   plugins: [],
