@@ -31,7 +31,7 @@ const bottomGlow = {
 };
 
 export default function ContactFormSection() {
-  const [tab, setTab] = useState("message");
+  const [tab, setTab] = useState("call");
 
   return (
     <div>
@@ -113,8 +113,8 @@ export default function ContactFormSection() {
             {/* Tab switcher */}
             <div className="flex gap-1 bg-offwhite border border-charcoal/10 rounded-full p-1 mb-8 self-start">
               {[
-                ["message", "Send Message"],
                 ["call", "Book a Call"],
+                ["message", "Send Message"],
               ].map(([id, label]) => (
                 <button
                   key={id}
