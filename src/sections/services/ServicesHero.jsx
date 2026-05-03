@@ -10,7 +10,7 @@ const STATS = [
 
 export default function ServicesHero() {
   return (
-    <section className="pt-36 pb-16 px-6 md:px-10 relative overflow-hidden">
+    <section className="pt-36 pb-32 px-6 md:px-10 relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto relative">
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 mb-8">
@@ -25,7 +25,6 @@ export default function ServicesHero() {
             <h1 className="text-[clamp(40px,5.5vw,72px)] font-light leading-[1.05] tracking-[-0.02em]">
               Marketing services for private clubs.
               <br />
-              {/* <em className="text-forest">for private clubs.</em> */}
             </h1>
           </ScrollReveal>
 
@@ -46,35 +45,6 @@ export default function ServicesHero() {
             </div>
           </ScrollReveal>
         </div>
-
-        {/* Stats row */}
-        <ScrollReveal delay={0.15}>
-          <div className="mt-16 pt-10 border-t border-periwinkle/20 grid grid-cols-3">
-            {STATS.map((s, i) => (
-              <div
-                key={s.label}
-                className="py-6 text-center"
-                style={{
-                  borderRight:
-                    i < 2 ? "1px solid rgba(123,143,190,0.25)" : "none",
-                }}
-              >
-                <div className="font-serif text-[42px] font-light leading-none">
-                  <AnimatedNumber
-                    target={s.target}
-                    suffix={s.suffix}
-                    triggered={true}
-                    delay={100}
-                    duration={1000}
-                  />
-                </div>
-                <div className="text-[11px] tracking-[0.16em] uppercase text-textmuted mt-2 font-medium">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );

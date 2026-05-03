@@ -9,7 +9,7 @@ export default function Services() {
       <ServicesHero />
       <ServicesCards />
       <IndustriesSection />
-      <ServicesCTA />
+      {/* <ServicesCTA /> */}
     </>
   );
 }
