@@ -5,8 +5,7 @@ export async function sendContactEmail(fields) {
     body: JSON.stringify(fields),
   });
 
-  if (!res.ok) {
-    throw new Error("Send failed");
-  }
+  if (res.status === 429) throw new Error("rate_limited");
+  if (!res.ok) throw new Error("send_failed");
   return res.json();
 }

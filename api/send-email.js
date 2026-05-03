@@ -1,11 +1,25 @@
 import { Resend } from "resend";
+import { Redis } from "@upstash/redis";
+import { Ratelimit } from "@upstash/ratelimit";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+const ratelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
+  limiter: Ratelimit.slidingWindow(3, "1 h"),
+});
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
 
   try {
+    const ip = req.headers["x-forwarded-for"]?.split(",")[0] ?? "unknown";
+    const { success } = await ratelimit.limit(ip);
+
+    if (!success) {
+      return res.status(429).json({ error: "Too many requests" });
+    }
+
     const { name, businessName, role, email, message } = req.body;
 
     const { error } = await resend.emails.send({
@@ -24,13 +38,11 @@ export default async function handler(req, res) {
     });
 
     if (error) {
-      console.error("Resend error:", error);
       return res.status(500).json({ error: "Failed to send" });
     }
 
     return res.status(200).json({ success: true });
   } catch (e) {
-    console.error("Handler error:", e);
     return res.status(500).json({ error: "Server error" });
   }
 }

@@ -78,7 +78,11 @@ export default function MessageTab() {
       await sendContactEmail(form);
       setSubmitted(true);
     } catch (e) {
-      setSendError("Your message couldn't be sent. Please try again soon.");
+      setSendError(
+        e.message === "rate_limited"
+          ? "You've sent too many messages. Please try again in an hour."
+          : "Your message couldn't be sent. Please try again soon."
+      );
     } finally {
       setIsSubmitting(false);
     }
