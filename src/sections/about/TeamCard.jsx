@@ -35,7 +35,7 @@ export default function TeamCard({ m }) {
           <img
             src={m.img}
             alt={m.name}
-            className="w-full h-full object-cover object-bottomf block"
+            className="w-full h-full object-cover object-middle block"
             style={{ filter: "contrast(1.03) brightness(1.01) saturate(0.95)" }}
           />
           <div
