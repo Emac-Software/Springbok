@@ -20,6 +20,7 @@ import CalendlyTab from "./CalendlyTab";
 const InstagramLink =
   "https://www.instagram.com/springbmedia?igsh=eTdoNzRpZjU3ZDlh&utm_source=qr";
 const LinkedInLink = "https://www.linkedin.com/company/springbokmedia/";
+const email = "jakeryandesign@outlook.com";
 
 const topGlow = {
   background:
@@ -71,7 +72,7 @@ export default function ContactFormSection() {
                   />
                 }
                 label="Email"
-                value="hello@springbokmedia.ca"
+                value={email}
               />
               <ContactDetail
                 icon={
