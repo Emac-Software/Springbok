@@ -14,6 +14,7 @@ export default async function handler(req, res) {
 
   try {
     const ip = req.headers["x-forwarded-for"]?.split(",")[0] ?? "unknown";
+    console.error("Rate limit IP:", ip);
     const { success } = await ratelimit.limit(ip);
 
     if (!success) {
