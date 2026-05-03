@@ -33,7 +33,7 @@ export default async function handler(req, res) {
 
   const { error } = await resend.emails.send({
     from: "onboarding@resend.dev",
-    to: "delivered@resend.dev",
+    to: "bounced@resend.dev",
     subject: `New inquiry from ${name} — ${businessName}`,
     react: EmailTemplate({ name, businessName, role, email, message }),
   });
