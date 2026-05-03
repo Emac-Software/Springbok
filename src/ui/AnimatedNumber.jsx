@@ -26,7 +26,6 @@ export default function AnimatedNumber({
   const rafRef = useRef(null);
 
   useEffect(() => {
-    console.log("TH");
     if (!triggered) return;
     let startTime = null;
 
