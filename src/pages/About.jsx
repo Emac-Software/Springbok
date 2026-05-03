@@ -2,6 +2,7 @@ import ScrollReveal from "@/ui/ScrollReveal";
 import Button from "@/ui/Button";
 import SectionHeading from "@/ui/SectionHeading";
 import ValuesSection from "@/sections/about/ValuesSection";
+import MeetTheTeamSection from "@/sections/about/MeetTheTeamSection";
 
 export default function About() {
   return (
@@ -47,7 +48,7 @@ export default function About() {
               {/* Image + badge */}
               <div className="relative z-10">
                 <img
-                  src="/assets/profile.png"
+                  src="/logo/deer-logo.png"
                   alt="Private golf club in Ontario"
                   className="w-full h-[520px] object-cover object-center rounded-xl -translate-y-6 shadow-[0_24px_64px_rgba(0,0,0,0.12)] "
                 />
@@ -72,7 +73,8 @@ export default function About() {
         </div>
       </section>
 
-      <ValuesSection />
+      <MeetTheTeamSection />
+      {/* <ValuesSection /> */}
     </>
   );
 }
