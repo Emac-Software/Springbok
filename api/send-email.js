@@ -24,12 +24,12 @@ export default async function handler(req, res) {
     const { name, businessName, role, email, message } = req.body;
 
     const { error } = await resend.emails.send({
-      from: "contact@springbokmedia.com",
+      from: "info@springbokmedia.com",
       to: "jakeryandesign@outlook.com",
       replyTo: email,
       subject: `New inquiry from ${name} — ${businessName}`,
       html: `
-        <h2>New contact form submission</h2>
+        <h3>New inquiry from submission</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Club / Business:</strong> ${businessName}</p>
         <p><strong>Role:</strong> ${role || "—"}</p>
