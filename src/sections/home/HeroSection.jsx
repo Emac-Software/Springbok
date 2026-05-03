@@ -26,7 +26,7 @@ export default function HeroSection() {
 
       {/* Golf course image */}
       <img
-        src="/assets/golf-hole-1.png"
+        src="/assets/courses/wdstx-hole-1.png"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover object-center"

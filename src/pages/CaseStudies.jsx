@@ -18,9 +18,9 @@ const cases = [
       "First sold-out event in 4 years",
     ],
     images: [
-      "/assets/golf-hole-1.png",
-      "/assets/golf-style.jpg",
-      "/assets/golf-hole-17.png",
+      "/assets/courses/wdstx-hole-1.png",
+      "/assets/golfers/golfer-style.jpg",
+      "/assets/courses/wdstx-hole-17.png",
     ],
   },
   {
@@ -36,9 +36,9 @@ const cases = [
       "Regional press coverage",
     ],
     images: [
-      "/assets/golf-swing-bunker.jpg",
-      "/assets/golf-swing-range.jpg",
-      "/assets/golf-swing-rough.jpg",
+      "/assets/golfers/golfer-swing-bunker.jpg",
+      "/assets/golfers/golfer-swing-range.jpg",
+      "/assets/golfers/golfer-swing-rough.jpg",
     ],
   },
   {

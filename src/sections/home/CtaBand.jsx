@@ -5,7 +5,7 @@ export default function CtaBand() {
     <section className="pb-20 px-6 md:px-10">
       <div className="relative overflow-hidden bg-forest rounded-3xl">
         <img
-          src="/assets/golf-hole-2.png"
+          src="/assets/courses/wdstx-hole-2.png"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
