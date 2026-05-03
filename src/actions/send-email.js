@@ -6,8 +6,6 @@ export async function sendContactEmail(fields) {
   });
 
   if (!res.ok) {
-    // const d = await res.json();
-    // console.log(d.message);
     throw new Error("Send failed");
   }
   return res.json();
