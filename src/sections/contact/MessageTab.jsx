@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { sendContactEmail } from "@/actions/send-email";
 
 const INITIAL_STATE = {
   name: "",
@@ -45,6 +46,8 @@ export default function MessageTab() {
   const [form, setForm] = useState(INITIAL_STATE);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [sendError, setSendError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,15 +65,23 @@ export default function MessageTab() {
     return e;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) {
       setErrors(errs);
       return;
     }
-    console.log("Form submission:", form);
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSendError(null);
+    try {
+      await sendContactEmail(form);
+      setSubmitted(true);
+    } catch (e) {
+      setSendError("Your message couldn't be sent. Please try again soon.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -231,11 +242,29 @@ export default function MessageTab() {
 
             <button
               type="submit"
-              className="md:col-span-2 w-1/2 mx-auto bg-forest hover:bg-forest text-cream rounded-lg py-4 font-sans text-sm font-semibold tracking-[0.1em] uppercase transition-colors duration-200 flex items-center justify-center gap-3"
+              disabled={isSubmitting}
+              className="md:col-span-2 w-1/2 mx-auto bg-forest text-cream rounded-lg py-4 font-sans text-sm font-semibold tracking-[0.1em] uppercase transition-colors duration-200 flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <span>Send Message</span>
-              <FontAwesomeIcon icon={faPaperPlane} className="w-4 h-4" />
+              <span>{isSubmitting ? "Sending…" : "Send Message"}</span>
+              {!isSubmitting && (
+                <FontAwesomeIcon icon={faPaperPlane} className="w-4 h-4" />
+              )}
             </button>
+
+            <AnimatePresence>
+              {sendError && (
+                <motion.p
+                  key="send-error"
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 4 }}
+                  transition={{ duration: 0.18 }}
+                  className="md:col-span-2 text-center font-sans text-xs text-red-500"
+                >
+                  {sendError}
+                </motion.p>
+              )}
+            </AnimatePresence>
 
             <p className="md:col-span-2 text-center font-sans text-xs text-textmuted tracking-[0.04em]">
               Strictly confidential · Never shared
