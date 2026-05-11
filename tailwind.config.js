@@ -23,8 +23,8 @@ export default {
         "redondo-bold": ['"Redondo Bold"', "Georgia", "serif"],
       },
       animation: {
-        "marquee-mobile": "marqueeScroll 20s linear infinite",
-        "marquee-tablet": "marqueeScroll 29s linear infinite",
+        "marquee-mobile": "marqueeScroll 28s linear infinite",
+        "marquee-tablet": "marqueeScroll 34s linear infinite",
         "marquee-desktop": "marqueeScroll 38s linear infinite",
       },
       keyframes: {
