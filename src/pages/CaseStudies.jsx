@@ -136,7 +136,7 @@ export default function CaseStudiesPage() {
             </div>
 
             {/* Active Case Mini-Detail */}
-            <div className="border-t border-white/10 pt-6 sm:pt-8">
+            <div className="hidden sm:block border-t border-white/10 pt-6 sm:pt-8">
               <div className="font-sans text-[10px] text-textmuted tracking-[0.2em] uppercase mb-4 sm:mb-5">
                 {activeIndex + 1} / {cases.length}
               </div>
