@@ -155,8 +155,7 @@ export default function CaseStudiesPage() {
         </div>
 
         {/* ── RIGHT: Vertical Wheel Carousel ── */}
-        {/* ── Set to a generous h-[80vh] on mobile so it has plenty of room, while filling the flex-1 space on desktop ── */}
-        <div className="w-full sm:flex-1 relative h-[80vh] sm:h-auto overflow-hidden">
+        <div className="w-full sm:flex-1 relative h-[83vh] sm:h-auto overflow-hidden">
           <div
             ref={scrollContainerRef}
             className="w-full h-full flex flex-col items-center overflow-y-auto snap-y snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
