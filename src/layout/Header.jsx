@@ -48,9 +48,10 @@ export default function Header() {
     }`;
 
   const mobileLinkClass = ({ isActive }) =>
-    `block w-full font-sans text-base tracking-[0.08em] uppercase py-3.5 border-b border-white/[0.06] text-left transition-colors duration-200 ${
+    `block w-full font-sans text-base tracking-[0.08em] uppercase py-3.5 border-b text-left transition-colors duration-200 ${
       isActive ? "text-camel" : "text-cream/70"
-    }`;
+    } ${isHeaderWhite ? "text-white border-white/[0.06]" : "text-charcoal border-black/[0.06]"}`;
+
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -107,7 +108,7 @@ export default function Header() {
 
           {/* Hamburger */}
           <button
-            className="md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 rounded-[4px] border border-white/20 transition-colors duration-500"
+            className={`md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 rounded-[4px] border  transition-colors duration-500 ${isHeaderWhite ? "border-white/20" : " border-black/20"}`}
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -118,7 +119,7 @@ export default function Header() {
             ].map((transform, i) => (
               <span
                 key={i}
-                className="block w-[18px] h-[1.5px] bg-white transition-all duration-200"
+                className={`block w-[18px] h-[1.5px] transition-all duration-200 ${isHeaderWhite ? "bg-white" : "bg-black/50"}`}
                 style={{
                   ...(transform !== null ? { transform } : {}),
                   ...(i === 1 ? { opacity: menuOpen ? 0 : 1 } : {}),
@@ -137,7 +138,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="md:hidden bg-charcoal/97 backdrop-blur-xl border-t border-white/[0.08] px-9 pb-8"
+            className={`md:hidden bg-charcoal/97 backdrop-blur-xl border-t px-9 pb-8 ${isHeaderWhite ? "border-white/[0.08]" : "border-black/[0.08]"}`}
           >
             <div className="py-2 flex flex-col">
               {ALL_LINKS.map((link) => (
@@ -151,14 +152,6 @@ export default function Header() {
                 </NavLink>
               ))}
             </div>
-            <Button
-              variant="camel"
-              to="/contact"
-              className="w-full py-4 text-sm justify-center mt-5"
-              onClick={() => setMenuOpen(false)}
-            >
-              Book a Discovery Call
-            </Button>
           </motion.div>
         )}
       </AnimatePresence>
