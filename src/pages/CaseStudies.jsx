@@ -192,18 +192,22 @@ export default function CaseStudiesPage() {
           {/* Up / Down pill arrows */}
           <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-50">
             <button
-              onClick={() => {
+              onClick={(e) => {
+                e.currentTarget.blur();
                 const i = Math.max(activeIndex - 1, 0);
                 const slide = slideRefs.current[i];
-                if (scrollContainerRef.current && slide)
-                  scrollContainerRef.current.scrollTo({
-                    top: slide.offsetTop,
-                    behavior: "smooth",
-                  });
+                if (scrollContainerRef.current && slide) {
+                  setTimeout(() => {
+                    scrollContainerRef.current.scrollTo({
+                      top: slide.offsetTop,
+                      behavior: "smooth",
+                    });
+                  }, 50);
+                }
               }}
               disabled={activeIndex === 0}
               aria-label="Previous case"
-              className="w-9 h-9 rounded-full flex items-center justify-center border border-cream/[0.12] bg-charcoal/40 backdrop-blur-sm text-cream/60 transition-all duration-200 hover:border-camel/40 hover:text-cream disabled:opacity-20 disabled:pointer-events-none"
+              className="w-9 h-9 rounded-full flex items-center justify-center border border-cream/[0.12] bg-charcoal/40 backdrop-blur-sm text-cream/60 transition-all duration-200 sm:hover:border-camel/40 sm:hover:text-cream active:scale-90 disabled:opacity-20 disabled:pointer-events-none"
             >
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                 <path
@@ -216,18 +220,22 @@ export default function CaseStudiesPage() {
               </svg>
             </button>
             <button
-              onClick={() => {
+              onClick={(e) => {
+                e.currentTarget.blur();
                 const i = Math.min(activeIndex + 1, cases.length - 1);
                 const slide = slideRefs.current[i];
-                if (scrollContainerRef.current && slide)
-                  scrollContainerRef.current.scrollTo({
-                    top: slide.offsetTop,
-                    behavior: "smooth",
-                  });
+                if (scrollContainerRef.current && slide) {
+                  setTimeout(() => {
+                    scrollContainerRef.current.scrollTo({
+                      top: slide.offsetTop,
+                      behavior: "smooth",
+                    });
+                  }, 50);
+                }
               }}
               disabled={activeIndex === cases.length - 1}
               aria-label="Next case"
-              className="w-9 h-9 rounded-full flex items-center justify-center border border-cream/[0.12] bg-charcoal/40 backdrop-blur-sm text-cream/60 transition-all duration-200 hover:border-camel/40 hover:text-cream disabled:opacity-20 disabled:pointer-events-none"
+              className="w-9 h-9 rounded-full flex items-center justify-center border border-cream/[0.12] bg-charcoal/40 backdrop-blur-sm text-cream/60 transition-all duration-200 sm:hover:border-camel/40 sm:hover:text-cream active:scale-90 disabled:opacity-20 disabled:pointer-events-none"
             >
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                 <path
