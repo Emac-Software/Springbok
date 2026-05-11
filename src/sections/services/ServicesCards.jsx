@@ -91,11 +91,11 @@ function ServiceCard({ number, icon: Icon, title, description, notes }) {
       <p className="text-sm leading-relaxed text-textmuted">{description}</p>
 
       {/* Jot notes */}
-      <div className="mt-4 space-y-1.5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+      <div className="mt-4 space-y-1.5 translate-y-2 sm:opacity-0 sm:group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
         {notes.map((note) => (
           <div
             key={note}
-            className="flex items-start gap-2 text-[12px] text-textmuted/80"
+            className="flex items-start gap-2 text-[12px] text-textmuted"
           >
             <span className="text-camel shrink-0 mt-px">—</span>
             <span>{note}</span>

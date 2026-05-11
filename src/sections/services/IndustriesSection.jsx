@@ -88,7 +88,7 @@ export default function IndustriesSection() {
               "linear-gradient(to left, var(--color-forest), transparent)",
           }}
         />
-        <div className="flex animate-marquee whitespace-nowrap will-change-transform">
+        <div className="flex animate-marquee-mobile md:animate-marquee-tablet lg:animate-marquee-desktop whitespace-nowrap will-change-transform shrink-0 justify-around min-w-full">
           {[...TRACK_ITEMS, ...TRACK_ITEMS].map((item, i) => (
             <TrackItem key={i} {...item} />
           ))}

@@ -23,12 +23,14 @@ export default {
         "redondo-bold": ['"Redondo Bold"', "Georgia", "serif"],
       },
       animation: {
-        marquee: "marqueeScroll 38s linear infinite",
+        "marquee-mobile": "marqueeScroll 12s linear infinite",
+        "marquee-tablet": "marqueeScroll 20s linear infinite",
+        "marquee-desktop": "marqueeScroll 30s linear infinite",
       },
       keyframes: {
         marqueeScroll: {
           "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
     },
