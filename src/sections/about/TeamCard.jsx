@@ -10,7 +10,7 @@ export default function TeamCard({ m }) {
       initial="rest"
       animate="rest"
     >
-      <div className="relative w-[450px]">
+      <div className="relative max-w-[450px]">
         {/* Decorative frame */}
         <motion.div
           className="absolute inset-0 rounded-2xl z-0 "

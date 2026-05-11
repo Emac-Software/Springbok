@@ -55,12 +55,12 @@ export default function MeetTheTeamSection() {
           <SectionHeading
             eyebrow="The People Behind the Work"
             as="h2"
-            headingClassName="text-[36px] md:text-[52px]"
-            className="mb-0"
+            headingClassName="text-[36px] md:text-[52px] !mb-0"
+            className="!mb-0"
           >
             Meet the team.
           </SectionHeading>
-          <p className="text-[13.5px] leading-[1.85] text-textmuted max-w-[320px] md:text-right font-light shrink-0">
+          <p className="text-[13.5px] text-textmuted max-w-[320px] md:text-right font-light shrink-0 ">
             A small team, deliberately. Every client works directly with the
             people in these photographs.
           </p>
@@ -68,7 +68,7 @@ export default function MeetTheTeamSection() {
 
         {/* 2×2 grid */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-10"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10"
           style={{ alignItems: "start" }}
         >
           {TEAM.map((m, i) => (
