@@ -4,16 +4,15 @@ import SectionHeading from "@/ui/SectionHeading";
 
 export default function Contact() {
   return (
-    <div className="min-h-screen pt-28 pb-24">
-      <div className="max-w-[1360px] mx-auto px-9">
+    <div className="min-h-screen pt-28 pb-0 sm:pb-24">
+      <div className="max-w-[1360px] mx-auto px-10">
         <ScrollReveal>
           <SectionHeading eyebrow="Contact">
             Let's start a real conversation.
           </SectionHeading>
         </ScrollReveal>
-
-        <ContactFormSection />
       </div>
+      <ContactFormSection />
     </div>
   );
 }

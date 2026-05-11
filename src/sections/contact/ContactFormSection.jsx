@@ -35,9 +35,9 @@ export default function ContactFormSection() {
   const [tab, setTab] = useState("call");
 
   return (
-    <div>
-      <ScrollReveal>
-        <div className="flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl min-h-[640px]">
+    <div className="px-0 sm:px-10">
+      <ScrollReveal className="sm:rounded-2xl overflow-hidden sm:shadow-2xl">
+        <div className="flex flex-col md:flex-row overflow-hidden min-h-[640px]">
           {/* ── LEFT PANEL ── */}
           <div className="relative w-full md:w-[360px] flex-shrink-0 bg-forest text-white p-10 md:p-12 flex flex-col overflow-hidden">
             <div
@@ -110,7 +110,7 @@ export default function ContactFormSection() {
           </div>
 
           {/* ── RIGHT PANEL ── */}
-          <div className="flex-1 bg-white p-10 md:p-12 flex flex-col">
+          <div className="flex-1 p-10 md:p-12 flex flex-col">
             {/* Tab switcher */}
             <div className="flex gap-1 bg-offwhite border border-charcoal/10 rounded-full p-1 mb-8 self-start">
               {[

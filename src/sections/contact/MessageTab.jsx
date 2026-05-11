@@ -81,7 +81,7 @@ export default function MessageTab() {
       setSendError(
         e.message === "rate_limited"
           ? "You've sent too many messages. Please try again in an hour."
-          : "Your message couldn't be sent. Please try again soon."
+          : "Your message couldn't be sent. Please try again soon.",
       );
     } finally {
       setIsSubmitting(false);
@@ -129,7 +129,7 @@ export default function MessageTab() {
           className="flex-1 flex flex-col"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-4">
-            <div className="col-span-2 pr-14">
+            <div className="col-span-1 md:col-span-2 pr-14">
               <h2 className="text-3xl font-normal text-charcoal leading-snug mb-3">
                 Send a Message
               </h2>
@@ -138,6 +138,7 @@ export default function MessageTab() {
                 within one business day.
               </p>
             </div>
+
             <div>
               <label htmlFor="name" className={labelClass}>
                 Full Name <span className="text-camel">*</span>
@@ -233,17 +234,6 @@ export default function MessageTab() {
               )}
             </div>
 
-            {/* Paper airplane spacer */}
-            <div className="md:col-span-2 relative h-16 mt-1">
-              <div
-                aria-hidden="true"
-                className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-70 text-camel rotate-[20deg]"
-              >
-                <FontAwesomeIcon icon={faPaperPlane} className="w-10 h-10" />
-              </div>
-              <DotTrail />
-            </div>
-
             <button
               type="submit"
               disabled={isSubmitting}
@@ -273,6 +263,16 @@ export default function MessageTab() {
             <p className="md:col-span-2 text-center font-sans text-xs text-textmuted tracking-[0.04em]">
               Strictly confidential · Never shared
             </p>
+          </div>
+          {/* Paper airplane spacer */}
+          <div className="md:col-span-1 relative h-16 mt-0 top-[-50px]">
+            <div
+              aria-hidden="true"
+              className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-70 text-camel rotate-[20deg]"
+            >
+              <FontAwesomeIcon icon={faPaperPlane} className="w-10 h-10" />
+            </div>
+            <DotTrail />
           </div>
         </motion.form>
       )}

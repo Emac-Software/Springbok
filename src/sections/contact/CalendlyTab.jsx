@@ -13,7 +13,7 @@ export default function CalendlyTab() {
       {/* Calendar icon + trail */}
       <div
         aria-hidden="true"
-        className="absolute top-8 right-44 pointer-events-none select-none text-camel opacity-60"
+        className="hidden lg:block absolute top-8 right-44 pointer-events-none select-none text-camel opacity-60"
       >
         <div className="relative w-10 h-10">
           <FontAwesomeIcon icon={faCalendarAlt} className="w-20 h-20" />
@@ -63,12 +63,10 @@ export default function CalendlyTab() {
         ))}
       </div>
 
-      <div className="flex-1 w-full overflow-hidden bg-white">
+      <div className="mx-auto w-full overflow-hidden max-w-[600px] bg-white p-0">
         <iframe
-          // 1. Notice the background_color=ffffff at the end of the URL
           src="https://calendly.com/jakedavis667/30min?hide_event_type_details=1"
-          // 2. Give the iframe enough height so it doesn't need to scroll
-          className="w-full h-[750px] border-none bg-white"
+          className="w-full h-[600px] border-none "
           scrolling="no"
           title="Schedule a Discovery Call"
         />
