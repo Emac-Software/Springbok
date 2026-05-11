@@ -19,27 +19,16 @@ const LINK_COLS = [
       { label: "Content Strategy", to: "/services" },
     ],
   },
-  {
-    title: "Company",
-    links: [
-      { label: "About Us", to: "/about" },
-      { label: "Case Studies", to: "/case-studies" },
-      { label: "Contact", to: "/contact" },
-    ],
-  },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-charcoal text-cream">
-      <div className="max-w-[1280px] mx-auto px-10 pt-20 pb-10">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-10 pt-16 md:pt-20 pb-10">
         {/* Main grid */}
-        <div
-          className="grid gap-16 pb-16 border-b border-white/10"
-          style={{ gridTemplateColumns: "2fr 1fr 1fr 1fr" }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-10 md:gap-16 pb-16 border-b border-white/10">
           {/* Col 1 — Brand */}
-          <div>
+          <div className="md:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5 mb-5">
               <img
                 src="/logo/head-logo.svg"
@@ -85,8 +74,8 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 flex justify-between items-center">
+        {/* Bottom bar*/}
+        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p
             className="font-sans text-xs tracking-[0.05em]"
             style={{ color: "rgba(255,255,255,0.3)" }}
