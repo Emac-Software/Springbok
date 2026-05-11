@@ -23,9 +23,9 @@ export default {
         "redondo-bold": ['"Redondo Bold"', "Georgia", "serif"],
       },
       animation: {
-        "marquee-mobile": "marqueeScroll 12s linear infinite",
-        "marquee-tablet": "marqueeScroll 20s linear infinite",
-        "marquee-desktop": "marqueeScroll 30s linear infinite",
+        "marquee-mobile": "marqueeScroll 20s linear infinite",
+        "marquee-tablet": "marqueeScroll 29s linear infinite",
+        "marquee-desktop": "marqueeScroll 38s linear infinite",
       },
       keyframes: {
         marqueeScroll: {

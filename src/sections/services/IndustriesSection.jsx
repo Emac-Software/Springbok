@@ -53,7 +53,6 @@ function TrackItem({ type, label, icon: Icon }) {
   return (
     <span className="inline-flex items-center gap-4 px-6 text-[12px] tracking-[0.22em] uppercase text-white/70">
       {label}
-      <span className="w-px h-3 bg-white/15 inline-block" />
     </span>
   );
 }
@@ -73,7 +72,8 @@ export default function IndustriesSection() {
       </ScrollReveal>
 
       {/* Track */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden flex w-full">
+        {/* Left Gradient */}
         <div
           className="absolute left-0 inset-y-0 w-32 z-10 pointer-events-none"
           style={{
@@ -81,6 +81,8 @@ export default function IndustriesSection() {
               "linear-gradient(to right, var(--color-forest), transparent)",
           }}
         />
+
+        {/* Right Gradient */}
         <div
           className="absolute right-0 inset-y-0 w-32 z-10 pointer-events-none"
           style={{
@@ -88,9 +90,21 @@ export default function IndustriesSection() {
               "linear-gradient(to left, var(--color-forest), transparent)",
           }}
         />
-        <div className="flex animate-marquee-mobile md:animate-marquee-tablet lg:animate-marquee-desktop whitespace-nowrap will-change-transform shrink-0 justify-around min-w-full">
-          {[...TRACK_ITEMS, ...TRACK_ITEMS].map((item, i) => (
+
+        {/* Track 1 */}
+        <div className="flex animate-marquee-mobile md:animate-marquee-tablet lg:animate-marquee-desktop whitespace-nowrap will-change-transform shrink-0 min-w-full items-center gap-8 pr-8">
+          {TRACK_ITEMS.map((item, i) => (
             <TrackItem key={i} {...item} />
+          ))}
+        </div>
+
+        {/* Track 2: The exact duplicate that follows directly behind */}
+        <div
+          aria-hidden="true"
+          className="flex animate-marquee-mobile md:animate-marquee-tablet lg:animate-marquee-desktop whitespace-nowrap will-change-transform shrink-0 min-w-full items-center gap-8 pr-8"
+        >
+          {TRACK_ITEMS.map((item, i) => (
+            <TrackItem key={`duplicate-${i}`} {...item} />
           ))}
         </div>
       </div>
