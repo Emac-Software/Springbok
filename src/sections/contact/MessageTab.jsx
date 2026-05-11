@@ -237,7 +237,7 @@ export default function MessageTab() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="md:col-span-2 w-1/2 mx-auto bg-forest text-cream rounded-lg py-4 font-sans text-sm font-semibold tracking-[0.1em] uppercase transition-colors duration-200 flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="md:col-span-2 w-2/3 mx-auto bg-forest text-cream rounded-lg py-4 font-sans text-sm font-semibold tracking-[0.1em] uppercase transition-colors duration-200 flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <span>{isSubmitting ? "Sending…" : "Send Message"}</span>
               {!isSubmitting && (
