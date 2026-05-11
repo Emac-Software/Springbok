@@ -116,7 +116,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div className="absolute z-10 bottom-20 right-10 -translate-x-1/2 flex flex-col items-center gap-3">
+      <div className="absolute z-10 bottom-20 sm:right-10 right-0 -translate-x-1/2 flex flex-col items-center gap-3">
         <motion.span
           className="text-white/50 text-xs uppercase tracking-widest font-light"
           initial={{ opacity: 0 }}

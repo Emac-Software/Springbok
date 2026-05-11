@@ -39,6 +39,16 @@ function TestimonialCarousel() {
     pauseTimeout.current = setTimeout(() => setPaused(false), 6000);
   };
 
+  const handleNext = () => {
+    const next = (current + 1) % TESTIMONIALS.length;
+    goTo(next, 1);
+  };
+
+  const handlePrev = () => {
+    const prev = current === 0 ? TESTIMONIALS.length - 1 : current - 1;
+    goTo(prev, -1);
+  };
+
   useEffect(() => {
     if (paused) return;
     const id = setTimeout(() => {
@@ -54,6 +64,16 @@ function TestimonialCarousel() {
     enter: (dir) => ({ opacity: 0, x: dir > 0 ? 40 : -40 }),
     center: { opacity: 1, x: 0 },
     exit: (dir) => ({ opacity: 0, x: dir > 0 ? -40 : 40 }),
+  };
+
+  // Logic to determine if a swipe was significant enough
+  const handleDragEnd = (e, { offset }) => {
+    const swipeThreshold = 50; // Minimum distance dragged to trigger slide change
+    if (offset.x < -swipeThreshold) {
+      handleNext();
+    } else if (offset.x > swipeThreshold) {
+      handlePrev();
+    }
   };
 
   return (
@@ -75,12 +95,17 @@ function TestimonialCarousel() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={handleDragEnd}
+            className="cursor-grab active:cursor-grabbing touch-pan-y"
           >
-            <blockquote className="font-serif font-light leading-[1.5] mb-8 italic text-[36px]">
+            <blockquote className="font-serif font-light leading-[1.5] mb-8 italic text-[36px] pointer-events-none">
               "{TESTIMONIALS[current].quote}"
             </blockquote>
-            <div className="mx-auto mb-5 w-10 h-0.5 bg-camel" />
-            <p className="text-[12px] tracking-[0.14em] uppercase text-textmuted font-medium">
+            <div className="mx-auto mb-5 w-10 h-0.5 bg-camel pointer-events-none" />
+            <p className="text-[12px] tracking-[0.14em] uppercase text-textmuted font-medium pointer-events-none">
               {TESTIMONIALS[current].attribution}
             </p>
           </motion.div>
@@ -112,7 +137,7 @@ function TestimonialCarousel() {
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-24 px-10">
+    <section className="py-24 px-10 overflow-hidden">
       <ScrollReveal>
         <TestimonialCarousel />
       </ScrollReveal>

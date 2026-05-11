@@ -17,7 +17,7 @@ export default function CtaBand() {
         <div className="absolute inset-0 bg-[rgba(15,35,18,0.82)]" />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-10 flex-wrap p-20">
+        <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-10 flex-wrap pt-20 pb-20 pl-0 pr-0 sm:p-20">
           <div>
             <p
               className="text-[11px] tracking-[0.2em] uppercase font-medium mb-5"
@@ -34,12 +34,10 @@ export default function CtaBand() {
               <em className="text-camel">your club.</em>
             </h2>
           </div>
-          <Button
-            variant="camel"
-            to="/contact"
-            onClick={() => setMenuOpen(false)}
-          >
-            Book a Discovery Call
+
+          <Button variant="camel" to="/contact">
+            <span className="hidden sm:inline">Book a Discovery Call</span>
+            <span className="sm:hidden">Book a Call</span>
           </Button>
         </div>
       </div>

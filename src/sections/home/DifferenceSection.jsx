@@ -51,7 +51,7 @@ export default function DifferenceSection() {
             </div>
 
             {/* Floating stat card */}
-            <div className="hidden md:block absolute bottom-0 right-0 bg-white rounded-2xl py-6 px-8 shadow-[0_16px_48px_rgba(0,0,0,0.12)]">
+            <div className="md:block absolute bottom-0 right-0 bg-white rounded-2xl py-6 px-8 shadow-[0_16px_48px_rgba(0,0,0,0.12)]">
               <div className="font-serif text-[44px] font-light text-camel leading-none">
                 <AnimatedNumber
                   target={CLIENT_RETENTION_RATE}

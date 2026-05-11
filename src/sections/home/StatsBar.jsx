@@ -28,16 +28,12 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-forest py-11 px-10">
+    <section ref={sectionRef} className="bg-forest py-11 px-0 sm:px-10">
       <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4">
         {STATS.map((s, i) => (
           <ScrollReveal key={i} delay={i * 0.07}>
             <div
-              className="text-center py-2"
-              style={{
-                borderRight:
-                  i < 3 ? "1px solid rgba(255,255,255,0.15)" : "none",
-              }}
+              className={`text-center py-2 ${i < 3 ? "md:border-r md:border-white/15" : ""} border-0`}
             >
               <div className="font-serif text-5xl font-light text-white leading-none">
                 <AnimatedNumber
