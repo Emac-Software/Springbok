@@ -80,7 +80,7 @@ const cases = [
 ];
 
 // -- CONTENT --
-export default function CaseStudiesPage({ setPage = () => {} }) {
+export default function CaseStudiesPage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef(null);
   const slideRefs = useRef([]);
@@ -114,10 +114,10 @@ export default function CaseStudiesPage({ setPage = () => {} }) {
 
   return (
     <div className="pt-[76px] min-h-screen">
-      <div className="flex h-[calc(100vh-76px)]">
+      <div className="flex flex-col sm:flex-row sm:h-[calc(100vh-76px)]">
         {/* ── LEFT: Sticky Panel ── */}
-        <div className="w-1/2 shrink-0 sticky top-[76px] h-[calc(100vh-76px)] flex items-center justify-end">
-          <div className="w-full max-w-[700px] flex flex-col gap-10 py-[72px] px-[52px] border-r border-charcoal/10">
+        <div className="w-full sm:w-1/2 shrink-0 sm:sticky sm:top-[76px] sm:h-[calc(100vh-76px)] flex items-center sm:justify-end z-10 relative bg-inherit">
+          <div className="w-full max-w-[700px] flex flex-col gap-6 sm:gap-10 py-8 px-6 sm:py-[72px] sm:px-[52px] border-b sm:border-b-0 sm:border-r border-charcoal/10">
             <div>
               <SectionHeading
                 eyebrow="Proof of Work"
@@ -126,14 +126,18 @@ export default function CaseStudiesPage({ setPage = () => {} }) {
               >
                 Work that speaks for itself.
               </SectionHeading>
-              <Button to="/contact" variant="forest" className="">
+              <Button
+                to="/contact"
+                variant="forest"
+                className="mt-4 sm:mt-0 !px-5"
+              >
                 Start your project
               </Button>
             </div>
 
             {/* Active Case Mini-Detail */}
-            <div className="border-t border-white/10 pt-8">
-              <div className="font-sans text-[10px] text-textmuted tracking-[0.2em] uppercase mb-5">
+            <div className="border-t border-white/10 pt-6 sm:pt-8">
+              <div className="font-sans text-[10px] text-textmuted tracking-[0.2em] uppercase mb-4 sm:mb-5">
                 {activeIndex + 1} / {cases.length}
               </div>
               <div className="flex flex-col gap-2.5">
@@ -151,7 +155,8 @@ export default function CaseStudiesPage({ setPage = () => {} }) {
         </div>
 
         {/* ── RIGHT: Vertical Wheel Carousel ── */}
-        <div className="flex-1 relative">
+        {/* ── Set to a generous h-[80vh] on mobile so it has plenty of room, while filling the flex-1 space on desktop ── */}
+        <div className="w-full sm:flex-1 relative h-[80vh] sm:h-auto overflow-hidden">
           <div
             ref={scrollContainerRef}
             className="w-full h-full flex flex-col items-center overflow-y-auto snap-y snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
@@ -168,7 +173,7 @@ export default function CaseStudiesPage({ setPage = () => {} }) {
           </div>
 
           {/* Scroll Nav Dots */}
-          <div className="absolute right-9 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50 pointer-events-none">
+          <div className="absolute right-4 sm:right-9 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50 pointer-events-none">
             {cases.map((_, i) => (
               <div
                 key={i}
@@ -186,7 +191,7 @@ export default function CaseStudiesPage({ setPage = () => {} }) {
           </div>
 
           {/* Up / Down pill arrows */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-50">
+          <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-50">
             <button
               onClick={() => {
                 const i = Math.max(activeIndex - 1, 0);
