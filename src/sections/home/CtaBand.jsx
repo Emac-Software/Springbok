@@ -8,7 +8,7 @@ export default function CtaBand() {
           src="/assets/people/group-smile.jpeg"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-[center_-300px]"
+          className="absolute inset-0 w-full h-full object-cover sm:object-[center_33%]"
           onError={(e) => {
             e.currentTarget.style.display = "none";
           }}
