@@ -6,35 +6,35 @@ const CAPABILITIES = [
   {
     number: "01",
     title: "Social Media Strategy",
-    body: "Platform-native narratives reflecting your club's distinct prestige.",
+    body: "Platform specific content that speaks like your brand.",
     tag: "Organic + Paid",
     slug: "/services",
   },
   {
     number: "02",
-    title: "Email & Member Comms",
-    body: "Elegant, targeted communications for refined member expectations.",
+    title: "Email & Customer Comms",
+    body: "Thoughtful email and CRM that keeps your best people coming back.",
     tag: "Retention Focus",
     slug: "/services",
   },
   {
     number: "03",
     title: "Content & Photography",
-    body: "Architectural and lifestyle visuals for a cohesive brand identity.",
+    body: "Brand visuals that matches your vision.",
     tag: "Visual Identity",
     slug: "/services",
   },
   {
     number: "04",
     title: "Reputation & Search",
-    body: "Meticulously curated digital footprints reflecting your legacy.",
+    body: "The first page of Google is doing more selling than your homepage. This is worth getting right.",
     tag: "Always-On",
     slug: "/services",
   },
   {
     number: "05",
-    title: "Member Acquisition",
-    body: "Precision-targeted campaigns to attract aligned prospective members.",
+    title: "Customer Acquisition",
+    body: "Paid campaigns on Google and Meta, handled properly from setup to spend.",
     tag: "Growth",
     slug: "/services",
   },
@@ -121,8 +121,8 @@ export default function CapabilityScroll() {
     <section className="py-24 overflow-hidden bg-offwhite">
       {/* Section header */}
       <div className="px-10 md:px-16 mb-12 max-w-[1280px] mx-auto">
-        <SectionHeading eyebrow="What we offer">
-          Services tailored to you.
+        <SectionHeading eyebrow="What we do">
+          Designed to feel distinctly yours
         </SectionHeading>
       </div>
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "@/ui/Button";
 
-const WORDS = ["understands", "converts", "resonates", "delivers", "elevates"];
+const WORDS = ["showcased", "understood", "grown"];
 
 export default function HeroSection() {
   const [wordIdx, setWordIdx] = useState(0);
@@ -60,7 +60,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
         >
-          Marketing that
+          Your brand, genuinely
         </motion.p>
 
         <motion.div
@@ -99,8 +99,8 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.45 }}
             >
-              Bespoke digital marketing for Ontario's finest private golf,
-              country, and sports clubs. Not generalists — specialists.
+              A small studio creating thoughtful marketing for hospitality and
+              lifestyle brands.
             </motion.p>
 
             <motion.div

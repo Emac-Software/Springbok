@@ -33,7 +33,7 @@ export default function DifferenceSection() {
             {/* Image container */}
             <div className="relative overflow-hidden rounded-[20px] h-[540px]">
               <img
-                src="/assets/golfers/golfer-swing-bunker.jpg"
+                src="/assets/people/bakery.jpeg"
                 alt="Private club grounds"
                 className="absolute inset-0 w-full h-full object-cover object-bottom"
                 onError={(e) => {
@@ -72,12 +72,11 @@ export default function DifferenceSection() {
         <ScrollReveal delay={0.2}>
           <div>
             <SectionHeading
-              eyebrow="The Springbok Difference"
-              subtitle="We've spent years embedded in private club culture. We understand
-              the balance between tradition and modernization, and the prestige
-              your brand must project at every touchpoint."
+              eyebrow="Why Springbok"
+              subtitle="Springbok is a small studio, a tight team, and a short list of brands we genuinely love working with. 
+              That means you get our full attention, start to finish. If the details matter to you, you're in the right place."
             >
-              Let's start a real conversation.
+              Here’s where it gets good
             </SectionHeading>
             <Button variant="forest" to="/about">
               Our Approach

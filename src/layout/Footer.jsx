@@ -13,10 +13,11 @@ const LINK_COLS = [
   {
     title: "Services",
     links: [
-      { label: "Social Media", to: "/services" },
-      { label: "Email Marketing", to: "/services" },
-      { label: "Member Comms", to: "/services" },
-      { label: "Content Strategy", to: "/services" },
+      { label: "Social Media Strategy", to: "/services" },
+      { label: "Email & Customer Comms", to: "/services" },
+      { label: "Content & Photography", to: "/services" },
+      { label: "Reputation & Search", to: "/services" },
+      { label: "Customer Acquisition", to: "/services" },
     ],
   },
 ];
@@ -46,8 +47,8 @@ export default function Footer() {
               className="font-sans text-sm leading-relaxed max-w-[280px]"
               style={{ color: "rgba(255,255,255,0.5)" }}
             >
-              Bespoke digital marketing for Ontario's finest private clubs. We
-              speak your language because we understand your world.
+              A small studio creating thoughtful marketing for hospitality and
+              lifestyle brands.
             </p>
           </div>
 
