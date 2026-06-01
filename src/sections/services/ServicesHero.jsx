@@ -23,7 +23,7 @@ export default function ServicesHero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-end">
           <ScrollReveal>
             <h1 className="text-[clamp(40px,5.5vw,72px)] font-light leading-[1.05] tracking-[-0.02em]">
-              Marketing services for private clubs.
+              Marketing built around hospitality.
               <br />
             </h1>
           </ScrollReveal>
@@ -31,8 +31,9 @@ export default function ServicesHero() {
           <ScrollReveal delay={0.1}>
             <div className="flex flex-col gap-8">
               <p className="text-[15px] leading-[1.85] text-textmuted max-w-[400px]">
-                Every engagement is tailored. No packages. No one-size-fits-all
-                retainers. We scope what your club actually needs.
+                We don't believe in one-size-fits-all. Every brand is different,
+                so every engagement gets built specifically for you. We don't
+                sell packages. We solve problems.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="forest" to="/contact">

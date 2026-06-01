@@ -14,10 +14,11 @@ const LINK_COLS = [
     title: "Services",
     links: [
       { label: "Social Media Strategy", to: "/services" },
-      { label: "Email & Customer Comms", to: "/services" },
-      { label: "Content & Photography", to: "/services" },
-      { label: "Reputation & Search", to: "/services" },
-      { label: "Customer Acquisition", to: "/services" },
+      { label: "Email & Newsletter Comms", to: "/services" },
+      { label: "Content Creation", to: "/services" },
+      { label: "Ads Strategy & Execution", to: "/services" },
+      { label: "Web Development", to: "/services" },
+      { label: "SEO Strategy", to: "/services" },
     ],
   },
 ];

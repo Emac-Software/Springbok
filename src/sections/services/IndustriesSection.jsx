@@ -1,36 +1,34 @@
 import {
   Flag,
-  Disc,
   Utensils,
+  BedDouble,
+  CircleDot,
   Anchor,
-  Target,
-  Trophy,
-  Home,
-  Leaf,
-  Zap,
+  Dumbbell,
+  Sparkles,
   Wine,
+  Disc,
 } from "lucide-react";
 import ScrollReveal from "@/ui/ScrollReveal";
 
 const MARQUEE_ITEMS = [
-  { label: "Golf & Country", icon: Flag },
-  { label: "Tennis Clubs", icon: Disc },
-  { label: "Private Dining", icon: Utensils },
-  { label: "Sailing Clubs", icon: Anchor },
-  { label: "Curling Clubs", icon: Target },
-  { label: "Sports Clubs", icon: Trophy },
-  { label: "Family Clubs", icon: Home },
-  { label: "Hunt Clubs", icon: Leaf },
-  { label: "Racquet Clubs", icon: Zap },
-  { label: "Social Clubs", icon: Wine },
+  { label: "Private Golf Clubs", icon: Flag },
+  { label: "Upscale Restaurants", icon: Utensils },
+  { label: "Boutique Hotels", icon: BedDouble },
+  { label: "Tennis & Racquet Clubs", icon: CircleDot },
+  { label: "Yacht & Sailing Clubs", icon: Anchor },
+  { label: "Luxury Fitness & Wellness", icon: Dumbbell },
+  { label: "Event & Wedding Venues", icon: Sparkles },
+  { label: "Wineries & Craft Beverage", icon: Wine },
+  { label: "Curling & Social Clubs", icon: Disc },
 ];
 
 const PILLS = [
   "Private Clubs",
-  "Golf & Country",
-  "Luxury Hospitality",
-  "Member Organisations",
-  "Boutique Sport",
+  "Fine Dining",
+  "Boutique Hotels",
+  "Sport & Leisure",
+  "Events & Venues",
 ];
 
 const TRACK_ITEMS = MARQUEE_ITEMS.flatMap(({ label, icon }) => [
@@ -66,7 +64,7 @@ export default function IndustriesSection() {
             Our Industries
           </div>
           <h2 className="text-[clamp(34px,4vw,52px)] font-light text-white leading-[1.1] tracking-[-0.02em]">
-            Built for <em className="text-camel">Elite Clubs.</em>
+            Built for <em className="text-camel">Elite Hospitality.</em>
           </h2>
         </div>
       </ScrollReveal>

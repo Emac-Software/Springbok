@@ -1,11 +1,4 @@
-import {
-  Share2,
-  Mail,
-  Image,
-  Search,
-  CalendarDays,
-  Activity,
-} from "lucide-react";
+import { Share2, Mail, Camera, Target, Globe, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "@/ui/SectionHeading";
 import ScrollReveal from "@/ui/ScrollReveal";
@@ -16,51 +9,63 @@ const SERVICES = [
     icon: Share2,
     title: "Social Media Strategy",
     description:
-      "Platform-native content that reflects the prestige and culture of your club — never generic, never off-brand.",
+      "Building your presence on the platforms where your audience actually is. Consistent, on-brand, and designed to turn followers into customers.",
     notes: [
-      "Platform-specific content strategy",
-      "Monthly calendar & scheduling",
+      "Instagram, TikTok, LinkedIn, Facebook strategy customized to your audience",
+      "Competitor analysis included",
     ],
   },
   {
     number: "02",
     icon: Mail,
-    title: "Email & Member Comms",
+    title: "Email & Newsletter Comms",
     description:
-      "Event invitations, newsletters, and seasonal campaigns crafted to sound like they came from inside your club.",
-    notes: ["Custom branded templates", "Event & newsletter campaigns"],
+      "Email that feels personal, not automated. Newsletters and campaigns built to keep your best customers engaged and coming back.",
+    notes: ["Segmentation strategy", "Optimized A/B testing"],
   },
   {
     number: "03",
-    icon: Image,
-    title: "Content & Photography",
+    icon: Camera,
+    title: "Content Creation",
     description:
-      "A consistent, elevated visual identity across all channels, built from a library your team can draw from year-round.",
-    notes: ["On-site shoot days available", "Reusable brand asset library"],
+      "Photography, videography, copywriting, or graphic design. Each service is built to work standalone or together, always with intention.",
+    notes: [
+      "Usage rights and asset library included",
+      "Brands we've shot: Sidewalkflowers, Himalayan Coffee House, Lev Bakery",
+    ],
   },
   {
     number: "04",
-    icon: Search,
-    title: "Digital Reputation",
+    icon: Target,
+    title: "Ads Strategy & Execution",
     description:
-      "Ensuring your club appears credibly and attractively everywhere prospective members and event guests search.",
-    notes: ["Google Business optimisation", "Review & listing management"],
+      "Paid advertising on Google, Meta, or X. Each campaign is built, monitored, and optimized standalone or as part of a larger strategy.",
+    notes: [
+      "Landing page adjustments for higher conversion",
+      "Monthly strategy calls to optimize and refine",
+    ],
   },
   {
     number: "05",
-    icon: CalendarDays,
-    title: "Event Campaigns",
+    icon: Globe,
+    title: "Web Development",
     description:
-      "Tournament days, gala dinners, championships — each deserves its own campaign, planned end-to-end.",
-    notes: ["End-to-end campaign planning", "Multi-channel promotion"],
+      "We build sites that are fast, mobile-friendly, and designed to turn visitors into customers. Updates and maintenance included.",
+    notes: [
+      "Conversion checkout or booking flows",
+      "Analytics setup & monthly performance reports",
+    ],
   },
   {
     number: "06",
-    icon: Activity,
-    title: "Strategy & Consulting",
+    icon: TrendingUp,
+    title: "SEO Strategy",
     description:
-      "For clubs with internal teams that need strategic guidance. We embed as your fractional marketing director.",
-    notes: ["Fractional marketing director", "Quarterly roadmaps & audits"],
+      "Being found when people search for you. We audit your site, build the strategy, and implement SEO so you show up in search results when your audience is actually looking.",
+    notes: [
+      "Keywords, competitor research, Google data",
+      "We figure out what your audience is actually looking for and build from there.",
+    ],
   },
 ];
 
