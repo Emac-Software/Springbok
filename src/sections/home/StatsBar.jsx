@@ -3,10 +3,10 @@ import ScrollReveal from "@/ui/ScrollReveal";
 import AnimatedNumber from "@/ui/AnimatedNumber";
 
 const STATS = [
-  { target: 40, suffix: "+", label: "Private clubs served" },
-  { target: 94, suffix: "%", label: "Client retention rate" },
-  { target: 8, suffix: " yrs", label: "Niche specialization" },
-  { target: 100, suffix: "%", label: "Ontario focused" },
+  { target: 10, suffix: "+", label: "Clubs helped" },
+  { target: 4, suffix: " yrs", label: "Niche specialization" },
+  { target: 15, suffix: "+", label: "Campaigns launched" },
+  { target: 6, suffix: "", label: "Service offerings" },
 ];
 
 export default function StatsBar() {

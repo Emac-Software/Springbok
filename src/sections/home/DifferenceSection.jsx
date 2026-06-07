@@ -54,15 +54,15 @@ export default function DifferenceSection() {
             <div className="md:block absolute bottom-0 right-0 bg-white rounded-2xl py-6 px-8 shadow-[0_16px_48px_rgba(0,0,0,0.12)]">
               <div className="font-serif text-[44px] font-light text-camel leading-none">
                 <AnimatedNumber
-                  target={CLIENT_RETENTION_RATE}
-                  suffix={"%"}
+                  target={700}
+                  suffix={"+"}
                   triggered={triggered}
                   delay={100}
-                  duration={1000}
+                  duration={500}
                 />
               </div>
               <div className="text-[11px] tracking-[0.12em] uppercase text-textmuted mt-1.5 font-medium">
-                Client retention rate
+                Avg views
               </div>
             </div>
           </div>
