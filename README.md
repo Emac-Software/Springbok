@@ -1,6 +1,4 @@
 # Springbok
-https://springbok-eight.vercel.app/
-
 Have a cloudflare worker (cloud function) to handle sending emails
 Need to set theses secrets in cloudflare: 
 ```
@@ -13,3 +11,10 @@ Need .env in root folder:
 ```
 VITE_WORKER_URL
 ```
+
+## Deploy via Hostinger
+```
+npm run build
+```
+
+Upload dist/ to hostinger
