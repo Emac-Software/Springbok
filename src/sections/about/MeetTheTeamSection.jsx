@@ -23,24 +23,6 @@ const TEAM = [
     frameRotate: "2deg",
     delay: 0.2,
   },
-  {
-    name: "Abby Davis",
-    title: "Account Manager",
-    bio: "Keeps campaigns running smoothly and clients informed at every step.",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?&q=85&auto=format&fit=crop&crop=faces,top",
-    frameColor: camelFrame,
-    frameRotate: "-1.5deg",
-    delay: 0.25,
-  },
-  {
-    name: "Jana Gramlow",
-    title: "Account Coordinator",
-    bio: "Handles the details that keep the work on track and deadlines met.",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?&q=85&auto=format&fit=crop&crop=faces,top",
-    frameColor: camelFrame,
-    frameRotate: "1.5deg",
-    delay: 0.3,
-  },
 ];
 
 export default function MeetTheTeamSection() {
