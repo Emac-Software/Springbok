@@ -65,19 +65,21 @@ const cases = [
   },
   {
     id: "04",
-    title: "Rideau Lakes Sailing Club",
-    label: "Content & Events",
+    title: "Himalayan Coffee House",
+    label: "Video, Photography & Social",
+    link: "https://jakedavis667ca1e.myportfolio.com/copy-of-wooden-sticks-golf-club",
     description:
-      "Built a seasonal content engine that made their short summer calendar feel like a year-round conversation.",
+      "Humanized a beloved midtown Toronto café in a one-week campaign, bringing the family story and latte artistry behind every cup to its social channels.",
     results: [
-      "Event attendance +38%",
-      "New member enquiries doubled",
-      "Regatta media coverage",
+      "5,000+ campaign views",
+      "+20 new followers in 1 week",
+      "High engagement across likes, comments & shares",
+      "1 hero reel + professional photo library for ongoing use",
     ],
     images: [
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=600&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1469796466635-455ede028aca?w=600&q=80&auto=format&fit=crop",
+      "/assets/himalayan-coffee-house/coffee.jpeg",
+      "/assets/himalayan-coffee-house/lunch.jpeg",
+      "/assets/himalayan-coffee-house/sandwhich.jpeg",
     ],
   },
 ];
