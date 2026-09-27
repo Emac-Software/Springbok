@@ -84,7 +84,7 @@ const CaseSlide = forwardRef(function CaseSlide(
           <h3 className="font-serif text-3xl xl:text-4xl leading-tight max-w-sm">
             {study.title}
           </h3>
-          <p className="font-sans text-sm text-textmuted leading-relaxed max-w-xs">
+          <p className="font-sans text-base text-textmuted leading-relaxed max-w-sm">
             {study.description}
           </p>
           {study.link && (

@@ -27,19 +27,21 @@ const cases = [
   },
   {
     id: "02",
-    title: "Lakeview Country Club",
-    label: "Reputation Management",
+    title: "Sidewalk Flowers",
+    label: "Campaign, Social & Paid",
+    link: "https://jakedavis667ca1e.myportfolio.com/sidewalk-flowers",
     description:
-      "Turned a reputational crisis into a communications advantage ahead of a $12M capital campaign.",
+      'Turned a founder\'s 200K-strong personal following into brand momentum with "Grow Together", a bright, healing-focused campaign that stood apart in streetwear.',
     results: [
-      "Rating 3.2 → 4.6 in 8 months",
-      "Capital campaign fully funded",
-      "Regional press coverage",
+      "Complete sellout within 30 days",
+      "+40% (12K to 16.8K) Instagram follower growth",
+      "30,000 campaign reel views",
+      "Significant lift in shares, comments & likes",
     ],
     images: [
-      "/assets/golfers/golfer-swing-bunker.jpg",
-      "/assets/golfers/golfer-swing-range.jpg",
-      "/assets/golfers/golfer-swing-rough.jpg",
+      "/assets/sidewalk-flowers/group-photo.jpg",
+      "/assets/sidewalk-flowers/photo-shoot.jpeg",
+      "/assets/sidewalk-flowers/group-photo-outside.jpg",
     ],
   },
   {
@@ -139,11 +141,11 @@ export default function CaseStudiesPage() {
               <div className="font-sans text-[10px] text-textmuted tracking-[0.2em] uppercase mb-4 sm:mb-5">
                 {activeIndex + 1} / {cases.length}
               </div>
-              <div className="flex flex-col gap-2.5">
+              <div className="flex flex-col gap-3">
                 {activeCase.results.map((r, i) => (
-                  <div key={i} className="flex items-center gap-2.5">
+                  <div key={i} className="flex items-center gap-3">
                     <span className="w-5 h-[1px] bg-forest shrink-0" />
-                    <span className="font-sans text-[12.5px] font-normal tracking-[0.02em] transition-colors duration-500">
+                    <span className="font-sans text-[15px] font-normal tracking-[0.02em] transition-colors duration-500">
                       {r}
                     </span>
                   </div>
