@@ -46,19 +46,21 @@ const cases = [
   },
   {
     id: "03",
-    title: "Thornbury Athletic & Racquet Club",
-    label: "Member Acquisition",
+    title: "Lev Bakery",
+    label: "Storytelling, Social & Video",
+    link: "https://jakedavis667ca1e.myportfolio.com/lev-bakery",
     description:
-      "Launched a junior programme that filled a waiting list in its first season and revitalised the membership pipeline.",
+      "Reactivated a dormant Instagram by telling the multi-generational family story behind an artisan sourdough bakery, anchored by a mini documentary.",
     results: [
-      "48 junior memberships",
-      "Family membership +22% YOY",
-      "2 national programme awards",
+      "+5% engagement rate in 2 weeks",
+      "30,000 views across platforms",
+      "Reactivated audience after 3 months of silence",
+      "Repositioned brand voice toward a family-oriented tone",
     ],
     images: [
-      "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=600&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=600&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=600&q=80&auto=format&fit=crop",
+      "/assets/lev-bakery/bakery.jpeg",
+      "/assets/lev-bakery/baked-goods.jpeg",
+      "/assets/lev-bakery/bread.jpeg",
     ],
   },
   {
