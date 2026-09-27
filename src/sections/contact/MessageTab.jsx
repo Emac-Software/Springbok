@@ -80,7 +80,7 @@ export default function MessageTab() {
     } catch (e) {
       setSendError(
         e.message === "rate_limited"
-          ? "You've sent too many messages. Please try again in an hour."
+          ? "You've sent too many messages. Please try again later."
           : "Your message couldn't be sent. Please try again soon.",
       );
     } finally {

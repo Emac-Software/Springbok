@@ -35,7 +35,7 @@ export default function ContactFormSection() {
   const [tab, setTab] = useState("call");
 
   return (
-    <div className="px-0 sm:px-10">
+    <div className="max-w-[1360px] mx-auto px-0 sm:px-10">
       <ScrollReveal className="sm:rounded-2xl overflow-hidden sm:shadow-2xl">
         <div className="flex flex-col md:flex-row overflow-hidden min-h-[640px]">
           {/* ── LEFT PANEL ── */}
