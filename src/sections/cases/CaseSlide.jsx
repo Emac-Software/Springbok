@@ -1,5 +1,6 @@
 import { forwardRef, useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import Button from "@/ui/Button";
 
 const FAN = [
   { rotate: -15, tx: -44, ty: 18, z: 10 },
@@ -78,10 +79,7 @@ const CaseSlide = forwardRef(function CaseSlide(
         {/* Text content */}
         <div className="flex flex-col items-center gap-3 text-center px-4">
           <p className="font-sans text-xs tracking-[0.25em] uppercase text-camel font-semibold">
-            {study.label}{" "}
-            <span className="text-textmuted font-semibold inline">
-              &middot; {study.year}
-            </span>
+            {study.label}
           </p>
           <h3 className="font-serif text-3xl xl:text-4xl leading-tight max-w-sm">
             {study.title}
@@ -89,6 +87,17 @@ const CaseSlide = forwardRef(function CaseSlide(
           <p className="font-sans text-sm text-textmuted leading-relaxed max-w-xs">
             {study.description}
           </p>
+          {study.link && (
+            <Button
+              variant="outline"
+              href={study.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2"
+            >
+              See More Details
+            </Button>
+          )}
         </div>
       </div>
     </div>

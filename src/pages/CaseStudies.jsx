@@ -7,27 +7,28 @@ import Button from "@/ui/Button";
 const cases = [
   {
     id: "01",
-    title: "Muskoka Highlands Golf Club",
-    label: "Social & Email",
-    year: "2023",
+    title: "Wooden Sticks Golf Club",
+    label: "Marketing, Social & Email",
+    link: "https://jakedavis667ca1e.myportfolio.com/copy-of-sidewalk-flowers",
     description:
-      "Repositioned a storied Muskoka club for the next generation of members without alienating its founding families.",
+      "Brought a legacy course with world-class replica holes out of digital obscurity, aligning its online presence with the premium experience on the ground.",
     results: [
-      "42% email open rate lift",
-      "3× Instagram engagement",
-      "First sold-out event in 4 years",
+      "+200% (1,200 to 3,600) Instagram/Facebook Follower Growth ",
+      "Multiple videos exceeding 120k views",
+      "+20% engagement Increase",
+      "Launched presence on 3 new platforms (TikTok, email, search)",
     ],
     images: [
-      "/assets/courses/wdstx-hole-1.png",
-      "/assets/golfers/golfer-style.jpg",
+      "/assets/courses/wdstx-hole-11a.png",
+      "/assets/golfers/golfer-swing-bunker.jpg",
       "/assets/courses/wdstx-hole-17.png",
+      "/assets/golfers/golfer-swing-range.jpg",
     ],
   },
   {
     id: "02",
     title: "Lakeview Country Club",
     label: "Reputation Management",
-    year: "2023",
     description:
       "Turned a reputational crisis into a communications advantage ahead of a $12M capital campaign.",
     results: [
@@ -45,7 +46,6 @@ const cases = [
     id: "03",
     title: "Thornbury Athletic & Racquet Club",
     label: "Member Acquisition",
-    year: "2024",
     description:
       "Launched a junior programme that filled a waiting list in its first season and revitalised the membership pipeline.",
     results: [
@@ -63,7 +63,6 @@ const cases = [
     id: "04",
     title: "Rideau Lakes Sailing Club",
     label: "Content & Events",
-    year: "2024",
     description:
       "Built a seasonal content engine that made their short summer calendar feel like a year-round conversation.",
     results: [
